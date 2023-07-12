@@ -1,0 +1,15 @@
+{
+  "devDependencies": {
+    "tailwindcss": "^3.3.2",
+    "ts-loader": "^9.4.4",
+    "typescript": "^5.1.6",
+    "webpack": "^5.88.1",
+    "webpack-cli": "^5.1.4"
+  },
+  "scripts": {
+    "ts-build": "webpack --mode production",
+    "ts-dev": "webpack --mode development --watch",
+    "tw-build": "npx tailwindcss -i ./src/css/style.css -o ./assets/css/style.css --minify",
+    "tw-dev": "npx tailwindcss -i ./src/css/style.css -o ./assets/css/style.css --watch"
+  }
+}

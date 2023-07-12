@@ -1,0 +1,31 @@
+/*
+Theme Name: Zencontent
+Theme URI: https://github.com/ramonkcom/zencontent/
+Author: Ramon K.
+Author URI: https://github.com/ramonkcom/
+Description: Minimalist one column theme for self expression.
+Tags: blog, personal, one-column, custom-logo, featured-images, translation-ready
+Version: 1.0.0
+Requires at least: 5.0
+Tested up to: 6.2
+Requires PHP: 7.0
+License: MIT License
+License URI: https://opensource.org/license/mit/
+Text Domain: zencontent
+*/
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .btn {
+        @apply font-mono text-sm font-normal px-4 py-2 border rounded bg-stone-200 text-stone-800 hover:text-stone-900 border-stone-300 hover:bg-stone-100 dark:bg-stone-600 dark:text-stone-200 dark:border-stone-700 hover:dark:bg-stone-500 dark:hover:text-stone-200;
+    }
+    .container {
+        @apply mx-auto px-4 max-w-screen-md;
+    }
+    .level-1 {
+        @apply bg-stone-200 dark:bg-stone-600
+    }
+}
