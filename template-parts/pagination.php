@@ -30,7 +30,7 @@
     <?php
     if (wp_link_pages(array('echo' => 0))) {
         $args = array(
-            'before' => '<div class="post-nav-links">' . __('Parts:'),
+            'before' => '<div class="post-nav-links">' . __('Parts:', 'zencontent'),
             'after' => '</div>',
             'separator' => '<span class="post-nav-links__separator"></span>',
             'nextpagelink' => __('Next part'),
