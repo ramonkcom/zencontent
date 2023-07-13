@@ -9,7 +9,7 @@
     <?php wp_head(); ?>
 </head>
 
-<body <?php body_class('bg-stone-300 font-stone-700 dark:bg-stone-700 dark:text-stone-300 font-light'); ?>>
+<body <?php body_class('bg-stone-300 text-stone-700 dark:bg-stone-700 dark:text-stone-300 font-light'); ?>>
     <?php wp_body_open(); ?>
 
     <a class="skip-link screen-reader-text" href="#content">
