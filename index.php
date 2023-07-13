@@ -12,7 +12,9 @@
         <?php endwhile; ?>
     <?php get_template_part('template-parts/pagination', '', array('context' => 'loop')); ?>
     <?php else: ?>
-        <p>No posts found. :(</p>
+        <p>
+            <?php _e('No posts found.', 'zencontent'); ?>
+        </p>
     <?php endif; ?>
 </div>
 

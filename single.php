@@ -13,7 +13,9 @@
             <?php get_template_part('template-parts/pagination', '', array('context' => 'single')); ?>
         <?php endwhile; ?>
     <?php else: ?>
-        <p>No posts found. :(</p>
+        <p>
+            <?php _e('Post not found.', 'zencontent'); ?>
+        </p>
     <?php endif; ?>
 </div>
 
