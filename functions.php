@@ -2,6 +2,8 @@
 
 function zenc_setup()
 {
+    add_theme_support('title-tag');
+
     add_theme_support(
         'custom-logo',
         array(
@@ -48,6 +50,30 @@ function zenc_script_tag($tag, $handle, $src)
 }
 
 add_filter('script_loader_tag', 'zenc_script_tag', 10, 3);
+
+function zenc_document_title($title)
+{
+    if (is_home() || is_front_page()) {
+        return get_bloginfo('name') . ' | ' . get_bloginfo('description');
+    } elseif (is_search()) {
+        $title = __('Search results for', 'zencontent') . ' "' . get_search_query() . '"';
+    } elseif (is_category()) {
+        $title = __('Post on category', 'zencontent') . ' "' . single_cat_title('', false) . '"';
+    } elseif (is_tag()) {
+        $title = __('Posts tagged', 'zencontent') . ' "' . single_tag_title('', false) . '"';
+    } elseif (is_singular('post')) {
+        $title = get_the_title();
+        if (get_query_var('page')) {
+            $title .= ' - ' . __('Part', 'zencontent') . ' ' . get_query_var('page');
+        }
+    }
+    if ($title) {
+        $title .= ' | ' . get_bloginfo('name');
+    }
+    return $title;
+}
+
+add_filter('pre_get_document_title', 'zenc_document_title');
 
 
 function zenc_get_format_icon($format, $size = 16)
