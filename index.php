@@ -1,37 +1,19 @@
 <?php get_header() ?>
 
-    <div class="container">
-        <?php if (have_posts()):
-            while (have_posts()):
-                the_post(); ?>
-    
-                <h3>
-                    <?php the_title(); ?>
-                </h3>
-    
-                <?php the_content(); ?>
-                <?php wp_link_pages(); ?>
-                <?php edit_post_link(); ?>
-    
-            <?php endwhile; ?>
-    
-        <?php
-        if (get_next_posts_link()) {
-            next_posts_link();
-        }
-        ?>
-        <?php
-        if (get_previous_posts_link()) {
-            previous_posts_link();
-        }
-        ?>
-    
-        <?php else: ?>
-    
-            <p>No posts found. :(</p>
-    
-        <?php endif; ?>
-
-    </div>
+<div class="container">
+    <?php if (have_posts()):
+        while (have_posts()):
+            the_post(); ?>
+            <?php $format = get_post_format() ? get_post_format() : 'standard'; ?>
+            <article id="post-<?php the_ID(); ?>" <?php post_class('border-t border-b border-stone-400 dark:border-stone-800 py-4 mt-[-1px]'); ?>>
+                <?php echo get_format_icon($format, 32); ?>
+                <?php get_template_part('template-parts/post/abstract', $format); ?>
+            </article>
+        <?php endwhile; ?>
+    <?php get_template_part('template-parts/pagination', '', array('context' => 'loop')); ?>
+    <?php else: ?>
+        <p>No posts found. :(</p>
+    <?php endif; ?>
+</div>
 
 <?php get_footer() ?>
