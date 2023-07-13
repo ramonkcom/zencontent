@@ -8,6 +8,7 @@
             <article id="post-<?php the_ID(); ?>" <?php post_class('border-t border-b border-stone-400 dark:border-stone-800 py-4 mt-[-1px]'); ?>>
                 <?php echo get_format_icon($format, 32); ?>
                 <?php get_template_part('template-parts/post/abstract', $format); ?>
+                <?php get_template_part('template-parts/meta', ''); ?>
             </article>
         <?php endwhile; ?>
     <?php get_template_part('template-parts/pagination', '', array('context' => 'loop')); ?>

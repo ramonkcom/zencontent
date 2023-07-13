@@ -11,6 +11,7 @@
                 ?>
             </article>
             <?php get_template_part('template-parts/pagination', '', array('context' => 'single')); ?>
+            <?php get_template_part('template-parts/meta', ''); ?>
         <?php endwhile; ?>
     <?php else: ?>
         <p>
