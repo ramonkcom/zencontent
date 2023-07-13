@@ -24,4 +24,4 @@
 
     <?php get_template_part('template-parts/header'); ?>
 
-    <main id="content" class="site-content py-4">
+    <main id="content" class="site-content">
