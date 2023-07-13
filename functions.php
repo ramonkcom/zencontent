@@ -1,6 +1,6 @@
 <?php
 
-function zencontent_setup()
+function zenc_setup()
 {
     add_theme_support(
         'custom-logo',
@@ -19,9 +19,9 @@ function zencontent_setup()
     register_nav_menu('main_menu', __('Main Menu', 'zencontent'));
 }
 
-add_action('after_setup_theme', 'zencontent_setup');
+add_action('after_setup_theme', 'zenc_setup');
 
-function zencontent_assets($hook)
+function zenc_assets($hook)
 {
     $script_path = '/assets/js/script.js';
     $script_ver = date("ymd-Gis", filemtime(get_template_directory() . $script_path));
@@ -35,9 +35,9 @@ function zencontent_assets($hook)
     wp_enqueue_style('zencontent-main-css', get_template_directory_uri() . $style_path, array('google-fonts'), $style_ver);
 }
 
-add_action('wp_enqueue_scripts', 'zencontent_assets');
+add_action('wp_enqueue_scripts', 'zenc_assets');
 
-function zencontent_script_tag($tag, $handle, $src)
+function zenc_script_tag($tag, $handle, $src)
 {
     if (!str_contains($handle, 'zencontent')) {
         return $tag;
@@ -47,10 +47,10 @@ function zencontent_script_tag($tag, $handle, $src)
     return $tag;
 }
 
-add_filter('script_loader_tag', 'zencontent_script_tag', 10, 3);
+add_filter('script_loader_tag', 'zenc_script_tag', 10, 3);
 
 
-function get_format_icon($format, $size = 16)
+function zenc_get_format_icon($format, $size = 16)
 {
     $icons = array(
         'audio' => (
