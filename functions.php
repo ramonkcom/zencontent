@@ -15,6 +15,8 @@ function zencontent_setup()
 
     $supported_formats = array('audio', 'chat', 'gallery', 'image', 'link', 'quote', 'status', 'video');
     add_theme_support('post-formats', $supported_formats);
+
+    register_nav_menu('main_menu', __('Main Menu', 'zencontent'));
 }
 
 add_action('after_setup_theme', 'zencontent_setup');
