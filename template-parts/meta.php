@@ -1,4 +1,4 @@
-<aside class="text-xs font-mono font-normal text-stone-600 dark:text-stone-40 flex space-x-4 flex-wrap">
+<aside class="text-xs font-mono font-normal text-stone-600 dark:text-stone-400 flex space-x-4 flex-wrap">
     <div>
         <a href="<?php the_permalink() ?>" title="<?php the_title() ?>">
             <?php echo get_the_date(); ?>
