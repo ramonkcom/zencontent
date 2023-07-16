@@ -86,14 +86,14 @@ Text Domain: zencontent
   ul {
     @apply mt-6;
   }
-  blockquote:last-child,
-  dl:last-child,
-  figure:last-child,
-  ol:last-child,
-  p:last-child,
-  pre:last-child,
-  table:last-child,
-  ul:last-child {
+  blockquote:first-child,
+  dl:first-child,
+  figure:first-child,
+  ol:first-child,
+  p:first-child,
+  pre:first-child,
+  table:first-child,
+  ul:first-child {
     @apply mt-0;
   }
   blockquote {
