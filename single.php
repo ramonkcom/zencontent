@@ -3,7 +3,7 @@
 <?php if (have_posts()):
     while (have_posts()): ?>
         <article id="post-<?php the_ID(); ?>" <?php post_class('py-4 post-single'); ?>>
-            <div class="container">
+            <div class="container py-16">
                 <?php
                 the_post();
                 $format = get_post_format() ? get_post_format() : 'standard';
@@ -15,7 +15,7 @@
         </article>
     <?php endwhile; ?>
 <?php else: ?>
-    <div class="container">
+    <div class="container py-16">
         <p>
             <?php _e('Post not found.', 'zencontent'); ?>
         </p>

@@ -1,6 +1,5 @@
 <?php get_header() ?>
-
-<div class="container">
+<div class="container py-16">
     <?php get_search_form(); ?>
 
     <div class="bg-yellow-500 text-black">
@@ -52,5 +51,4 @@
         </p>
     </div><!-- .container -->
 <?php endif; ?>
-
 <?php get_footer() ?>
