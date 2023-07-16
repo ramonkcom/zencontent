@@ -9,9 +9,9 @@
                 $format = get_post_format() ? get_post_format() : 'standard';
                 get_template_part('template-parts/post/single', $format);
                 ?>
+                <?php get_template_part('template-parts/meta', ''); ?>
+                <?php get_template_part('template-parts/pagination', '', array('context' => 'single')); ?>
             </article>
-            <?php get_template_part('template-parts/pagination', '', array('context' => 'single')); ?>
-            <?php get_template_part('template-parts/meta', ''); ?>
         <?php endwhile; ?>
     <?php else: ?>
         <p>

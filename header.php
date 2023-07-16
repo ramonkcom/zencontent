@@ -1,15 +1,25 @@
 <!DOCTYPE html>
-<html <?php language_attributes(); ?>>
+<html <?php language_attributes(); ?> style="font-size: 20px">
 
 <head>
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <style>
+        :root {
+            --color-highlight: rgb(234, 179, 8)
+        }
+
+        ::selection {
+            background-color: var(--color-highlight);
+            color: black;
+        }
+    </style>
     <?php wp_head(); ?>
 </head>
 
-<body <?php body_class('bg-stone-300 text-stone-700 dark:bg-stone-700 dark:text-stone-300 font-light'); ?>>
+<body <?php body_class(); ?>>
     <?php wp_body_open(); ?>
 
     <a class="skip-link screen-reader-text" href="#content">

@@ -1,4 +1,4 @@
-<h2 class="text-4xl font-medium">
+<h2>
     <a href="<?php the_permalink(); ?>">
         <?php the_title(); ?>
     </a>

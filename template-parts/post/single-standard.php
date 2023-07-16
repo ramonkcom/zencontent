@@ -8,7 +8,7 @@ if (wp_link_pages(array('echo' => 0))) {
 }
 ?>
 
-<h1 class="text-6xl font-medium">
+<h1>
     <?php echo $title; ?>
 </h1>
 

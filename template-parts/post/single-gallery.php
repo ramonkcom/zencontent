@@ -1,4 +1,4 @@
-<h1 class="text-6xl font-medium">
+<h1>
     <?php the_title(); ?>
 </h1>
 
