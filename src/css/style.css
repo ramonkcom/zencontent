@@ -100,7 +100,7 @@ Text Domain: zencontent
     @apply ml-7 before:content-['“'] before:font-serif before:text-6xl before:absolute before:-ml-8 before:mt-[-0.25em] before:text-stone-400 before:dark:text-stone-600;
   }
   blockquote cite {
-    @apply block mt-2 font-sans not-italic text-sm;
+    @apply block mt-2 font-sans not-italic text-sm before:content-["–"] before:mr-1;
   }
   blockquote p {
     @apply font-serif italic text-2xl;

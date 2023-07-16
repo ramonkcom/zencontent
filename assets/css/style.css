@@ -622,6 +622,12 @@ blockquote cite {
   font-style: normal;
 }
 
+blockquote cite::before {
+  margin-right: 0.25rem;
+  --tw-content: "–";
+  content: var(--tw-content);
+}
+
 blockquote p {
   font-family: Times New Roman, Georgia, serif;
   font-size: 1.5rem;
