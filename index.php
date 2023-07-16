@@ -30,23 +30,27 @@
             <?php endif; ?>
         <?php endif ?>
     </div>
+</div><!-- .container -->
 
-    <?php if (have_posts()):
-        while (have_posts()):
-            the_post(); ?>
-            <?php $format = get_post_format() ? get_post_format() : 'standard'; ?>
-            <article id="post-<?php the_ID(); ?>" <?php post_class('border-t border-b border-stone-400 dark:border-stone-600 py-4 mt-[-1px] post-abstract'); ?>>
+<?php if (have_posts()):
+    while (have_posts()):
+        the_post(); ?>
+        <?php $format = get_post_format() ? get_post_format() : 'standard'; ?>
+        <article id="post-<?php the_ID(); ?>" <?php post_class('border-t border-b border-stone-400 dark:border-stone-600 py-4 mt-[-1px] post-abstract'); ?>>
+            <div class="container">
                 <?php echo zenc_get_format_icon($format, 32); ?>
                 <?php get_template_part('template-parts/post/abstract', $format); ?>
                 <?php get_template_part('template-parts/meta', ''); ?>
-            </article>
-        <?php endwhile; ?>
+                <div><!-- .container -->
+        </article>
+    <?php endwhile; ?>
     <?php get_template_part('template-parts/pagination', '', array('context' => 'loop')); ?>
-    <?php else: ?>
+<?php else: ?>
+    <div class="container">
         <p>
             <?php _e('No posts found.', 'zencontent'); ?>
         </p>
-    <?php endif; ?>
-</div>
+    </div><!-- .container -->
+<?php endif; ?>
 
 <?php get_footer() ?>

@@ -1,9 +1,9 @@
 <?php get_header() ?>
 
-<div class="container">
-    <?php if (have_posts()):
-        while (have_posts()): ?>
-            <article id="post-<?php the_ID(); ?>" <?php post_class('py-4 post-single'); ?>>
+<?php if (have_posts()):
+    while (have_posts()): ?>
+        <article id="post-<?php the_ID(); ?>" <?php post_class('py-4 post-single'); ?>>
+            <div class="container">
                 <?php
                 the_post();
                 $format = get_post_format() ? get_post_format() : 'standard';
@@ -11,13 +11,15 @@
                 ?>
                 <?php get_template_part('template-parts/meta', ''); ?>
                 <?php get_template_part('template-parts/pagination', '', array('context' => 'single')); ?>
-            </article>
-        <?php endwhile; ?>
-    <?php else: ?>
+            </div><!-- .container -->
+        </article>
+    <?php endwhile; ?>
+<?php else: ?>
+    <div class="container">
         <p>
             <?php _e('Post not found.', 'zencontent'); ?>
         </p>
-    <?php endif; ?>
-</div>
+    </div><!-- .container -->
+<?php endif; ?>
 
 <?php get_footer() ?>

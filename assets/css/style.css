@@ -834,9 +834,52 @@ pre {
 .container {
   margin-left: auto;
   margin-right: auto;
-  max-width: 768px;
+  max-width: 48rem;
   padding-left: 1rem;
   padding-right: 1rem;
+}
+
+@media (min-width: 640px) {
+  .container > *:not(.wide) {
+    margin-left: 3rem;
+    margin-right: 3rem;
+  }
+}
+
+.container .wide,
+  .container > .wp-block-image,
+  .container > .wp-block-gallery,
+  .container > .wp-block-embed.wp-has-aspect-ratio {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.container .wide::before,
+  .container > .wp-block-image::before,
+  .container > .wp-block-gallery::before,
+  .container > .wp-block-embed.wp-has-aspect-ratio::before {
+  display: block;
+  height: 0.75rem;
+  width: 100%;
+  --tw-content: "";
+  content: var(--tw-content);
+}
+
+.container .wide::after,
+  .container > .wp-block-image::after,
+  .container > .wp-block-gallery::after,
+  .container > .wp-block-embed.wp-has-aspect-ratio::after {
+  display: block;
+  height: 0.75rem;
+  width: 100%;
+  --tw-content: "";
+  content: var(--tw-content);
+}
+
+.container .wp-block-embed .wp-block-embed__wrapper div,
+  .container .wp-block-embed .wp-block-embed__wrapper iframe {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .level-1 {
@@ -981,6 +1024,11 @@ pre {
 .py-4 {
   padding-top: 1rem;
   padding-bottom: 1rem;
+}
+
+.py-8 {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 
 .pt-2 {
