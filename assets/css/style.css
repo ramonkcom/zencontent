@@ -893,6 +893,14 @@ pre {
   margin-top: -1px;
 }
 
+.mt-10 {
+  margin-top: 2.5rem;
+}
+
+.mt-9 {
+  margin-top: 2.25rem;
+}
+
 .flex {
   display: flex;
 }
@@ -983,6 +991,22 @@ pre {
   padding-bottom: 1rem;
 }
 
+.pt-8 {
+  padding-top: 2rem;
+}
+
+.pt-12 {
+  padding-top: 3rem;
+}
+
+.pt-4 {
+  padding-top: 1rem;
+}
+
+.pt-2 {
+  padding-top: 0.5rem;
+}
+
 .font-mono {
   font-family: IBM Plex Mono, monospace;
 }
@@ -1039,6 +1063,11 @@ pre {
 :is(.dark .dark\:border-stone-600) {
   --tw-border-opacity: 1;
   border-color: rgb(87 83 78 / var(--tw-border-opacity));
+}
+
+:is(.dark .dark\:border-stone-500) {
+  --tw-border-opacity: 1;
+  border-color: rgb(120 113 108 / var(--tw-border-opacity));
 }
 
 :is(.dark .dark\:text-stone-400) {

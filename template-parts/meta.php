@@ -6,7 +6,8 @@ $li_style = 'p-0 border-none';
 $link_style = 'border-none text-stone-400 dark:text-stone-500 font-normal'
     ?>
 
-<aside class="text-[0.75em] font-mono font-normal leading-loose text-stone-600 dark:text-stone-400 mt-4">
+<aside
+    class="text-[0.75em] font-mono font-normal leading-loose text-stone-600 dark:text-stone-400 <?php if (is_singular('post')): ?>border-t border-stone-400 dark:border-stone-500 mt-12 pt-2<?php else: ?>mt-4<?php endif; ?>">
     <?php if ($tags = get_the_tags()): ?>
         <div>
             <ul class="<?php echo $list_style; ?>">
