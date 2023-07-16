@@ -3,7 +3,7 @@
 <div class="container">
     <?php if (have_posts()):
         while (have_posts()): ?>
-            <article id="post-<?php the_ID(); ?>" <?php post_class('py-4'); ?>>
+            <article id="post-<?php the_ID(); ?>" <?php post_class('py-4 post-single'); ?>>
                 <?php
                 the_post();
                 $format = get_post_format() ? get_post_format() : 'standard';
