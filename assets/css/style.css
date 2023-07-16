@@ -471,13 +471,6 @@ article a:hover {
   color: rgb(168 162 158 / var(--tw-text-opacity));
 }
 
-article dl,
-  article ol,
-  article ul {
-  width: -moz-max-content;
-  width: max-content;
-}
-
 article ol li,
   article ul li {
   border-bottom-width: 1px;
@@ -787,6 +780,7 @@ pre {
 }
 
 .btn {
+  display: inline-block;
   border-radius: 0.25rem;
   border-width: 1px;
   --tw-border-opacity: 1;
@@ -877,16 +871,20 @@ pre {
   border-width: 0;
 }
 
-.m-4 {
-  margin: 1rem;
-}
-
-.mt-\[-1px\] {
-  margin-top: -1px;
+.mt-12 {
+  margin-top: 3rem;
 }
 
 .mt-4 {
   margin-top: 1rem;
+}
+
+.mt-8 {
+  margin-top: 2rem;
+}
+
+.mt-\[-1px\] {
+  margin-top: -1px;
 }
 
 .flex {
@@ -915,6 +913,12 @@ pre {
 
 .justify-between {
   justify-content: space-between;
+}
+
+.space-x-1 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(0.25rem * var(--tw-space-x-reverse));
+  margin-left: calc(0.25rem * calc(1 - var(--tw-space-x-reverse)));
 }
 
 .space-x-2 > :not([hidden]) ~ :not([hidden]) {
@@ -953,10 +957,6 @@ pre {
   padding: 0px;
 }
 
-.p-4 {
-  padding: 1rem;
-}
-
 .px-2 {
   padding-left: 0.5rem;
   padding-right: 0.5rem;
@@ -986,22 +986,13 @@ pre {
   line-height: 2rem;
 }
 
+.text-\[0\.75em\] {
+  font-size: 0.75em;
+}
+
 .text-sm {
   font-size: 0.875rem;
   line-height: 1.25rem;
-}
-
-.text-xs {
-  font-size: 0.75rem;
-  line-height: 1rem;
-}
-
-.text-\[0\.5em\] {
-  font-size: 0.5em;
-}
-
-.text-\[0\.75em\] {
-  font-size: 0.75em;
 }
 
 .font-bold {
@@ -1031,27 +1022,12 @@ pre {
   color: rgb(87 83 78 / var(--tw-text-opacity));
 }
 
-.text-stone-500 {
-  --tw-text-opacity: 1;
-  color: rgb(120 113 108 / var(--tw-text-opacity));
-}
-
 :is(.dark .dark\:inline) {
   display: inline;
 }
 
 :is(.dark .dark\:hidden) {
   display: none;
-}
-
-:is(.dark .dark\:border-stone-800) {
-  --tw-border-opacity: 1;
-  border-color: rgb(41 37 36 / var(--tw-border-opacity));
-}
-
-:is(.dark .dark\:border-stone-500) {
-  --tw-border-opacity: 1;
-  border-color: rgb(120 113 108 / var(--tw-border-opacity));
 }
 
 :is(.dark .dark\:border-stone-600) {

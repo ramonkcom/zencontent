@@ -25,11 +25,6 @@ Text Domain: zencontent
   article a {
     @apply font-medium border-dotted border-b-2 text-stone-800 hover:text-stone-600 border-stone-400 dark:text-stone-200 dark:hover:text-stone-400 dark:border-stone-500;
   }
-  article dl,
-  article ol,
-  article ul {
-    @apply w-max;
-  }
   article ol li,
   article ul li {
     @apply border-b border-dotted border-stone-400 dark:border-stone-500 py-1;
@@ -120,7 +115,7 @@ Text Domain: zencontent
 
 @layer components {
   .btn {
-    @apply font-mono text-sm font-normal px-4 py-2 border rounded bg-stone-200 text-stone-800 hover:text-stone-900 border-stone-300 hover:bg-stone-100 dark:bg-stone-600 dark:text-stone-200 dark:border-stone-700 hover:dark:bg-stone-500 dark:hover:text-stone-200;
+    @apply inline-block font-mono text-sm font-normal px-4 py-2 border rounded bg-stone-200 text-stone-800 hover:text-stone-900 border-stone-300 hover:bg-stone-100 dark:bg-stone-600 dark:text-stone-200 dark:border-stone-700 hover:dark:bg-stone-500 dark:hover:text-stone-200;
   }
   .container {
     @apply mx-auto px-4 max-w-screen-md;
