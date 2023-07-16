@@ -1,6 +1,6 @@
 <?php if ($args['context'] === 'loop'): ?>
 
-    <div class="flex justify-between font-mono font-normal">
+    <div class="flex justify-between font-mono font-normal mt-8">
         <div>
             <?php
             if (get_previous_posts_link()):
@@ -30,9 +30,9 @@
     <?php
     if (wp_link_pages(array('echo' => 0))) {
         $args = array(
-            'before' => '<div class="post-nav-links">' . __('Parts:', 'zencontent'),
-            'after' => '</div>',
-            'separator' => '<span class="post-nav-links__separator"></span>',
+            'before' => '<nav class="font-mono flex space-x-1 mt-4"><span class="font-normal">' . __('Parts:', 'zencontent') . '</span>',
+            'after' => '</nav>',
+            'pagelink' => '%',
             'nextpagelink' => __('Next part'),
             'previouspagelink' => __('Previous part'),
         );
@@ -51,7 +51,7 @@
         return $previous ? '← ' . $label : $label . ' →';
     }
     ?>
-    <div class="flex justify-between font-mono font-normal">
+    <div class="flex justify-between mt-12">
         <div>
             <?php
             if ($previous_post = get_adjacent_post(false, '', false)):
