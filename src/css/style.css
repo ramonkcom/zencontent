@@ -32,7 +32,7 @@ Text Domain: zencontent
   }
   article ol li,
   article ul li {
-    @apply border-b border-dotted border-stone-400 dark:border-stone-500 py-1.5;
+    @apply border-b border-dotted border-stone-400 dark:border-stone-500 py-1;
   }
   article ol li:last-child,
   article ul li:last-child {
@@ -53,7 +53,7 @@ Text Domain: zencontent
   h4,
   h5,
   h6 {
-    @apply font-bold mt-[1em] mb-[0.25em];
+    @apply font-normal mt-[1em] mb-[0.25em];
   }
   h1 a,
   h2 a,
@@ -111,7 +111,7 @@ Text Domain: zencontent
     @apply font-serif italic text-2xl;
   }
   dt {
-    @apply font-bold;
+    @apply font-normal;
   }
   pre {
     @apply overflow-x-auto font-mono font-normal bg-stone-950 text-stone-50 rounded p-4;
