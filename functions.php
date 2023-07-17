@@ -79,7 +79,7 @@ add_filter('pre_get_document_title', 'zenc_document_title');
 
 function zenc_read_more_link()
 {
-    return '<div class="flex justify-end"><a class="btn-xs" href="' . get_permalink() . '">' . __('Read more', 'zencontent') . ' ↗</a></div>';
+    return '<p><a href="' . get_permalink() . '" title="' . get_the_title() . '" class="italic">(' . __('Read more', 'zencontent') . ' ...)</a></p>';
 }
 add_filter('the_content_more_link', 'zenc_read_more_link');
 
