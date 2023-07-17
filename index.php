@@ -37,7 +37,11 @@
     while (have_posts()):
         the_post();
         $format = get_post_format() ? get_post_format() : 'standard'; ?>
-        <article id="post-<?php the_ID(); ?>" <?php post_class('py-[4rem] lg:mx-auto max-w-screen-lg border-t border-stone-500 dark:border-stone-500 border-dotted rounded post-abstract'); ?>>
+        <article id="post-<?php the_ID(); ?>" <?php post_class('relative py-[4rem] lg:mx-auto max-w-screen-xl border-t border-stone-500 dark:border-stone-500 border-dotted rounded post-abstract'); ?>>
+            <span
+                class="absolute p-4 border border-dotted rounded border-stone-500 dark:border-stone-500 text-stone-500 dark:text-stone-500 top-0 -mt-[1px]">
+                <?php echo zenc_get_format_icon($format, '1rem'); ?>
+            </span>
             <div class="container">
                 <div class="mb-[1.5rem]">
                     <?php get_template_part('template-parts/post/meta', 'categories'); ?>
