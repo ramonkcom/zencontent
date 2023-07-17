@@ -1,6 +1,8 @@
 <?php get_header() ?>
-<div class="container py-16">
-    <?php get_search_form(); ?>
+<div class="container py-[4em]">
+    <div>
+        <?php get_search_form(); ?>
+    </div>
 
     <div class="bg-yellow-500 text-black">
         <?php if (is_home()): ?>
@@ -33,20 +35,25 @@
 
 <?php if (have_posts()):
     while (have_posts()):
-        the_post(); ?>
-        <?php $format = get_post_format() ? get_post_format() : 'standard'; ?>
-        <article id="post-<?php the_ID(); ?>" <?php post_class('py-4 post-abstract'); ?>>
-            <div class="container relative">
-                <div class="w-full border-t border-stone-400 mx-[3rem] absolute -left-[40px] -top-[1em]"></div>
-                <?php echo zenc_get_format_icon($format, 20, 'border text-stone-400 border-stone-400 inline-block p-2 rounded absolute -left-[40px] -top-[1em]'); ?>
+        the_post();
+        $format = get_post_format() ? get_post_format() : 'standard'; ?>
+        <article id="post-<?php the_ID(); ?>" <?php post_class('py-[4em] lg:mx-auto max-w-screen-lg border-t border-stone-400 dark:border-stone-600 border-dotted rounded post-abstract'); ?>>
+            <div class="container">
+                <div class="mb-[1.5em]">
+                    <?php get_template_part('template-parts/post/meta', 'categories'); ?>
+                </div>
                 <?php get_template_part('template-parts/post/abstract', $format); ?>
-                <?php get_template_part('template-parts/meta', ''); ?>
+                <footer class="mt-[1.5em]">
+                    <?php get_template_part('template-parts/post/meta', 'tags'); ?>
+                </footer>
                 <div><!-- .container -->
         </article>
     <?php endwhile; ?>
+    <nav class="container py-[4em] border-t border-stone-400 dark:border-stone-600">
     <?php get_template_part('template-parts/pagination', '', array('context' => 'loop')); ?>
+    </nav>
 <?php else: ?>
-    <div class="container">
+    <div class="container py-[4em]">
         <p>
             <?php _e('No posts found.', 'zencontent'); ?>
         </p>

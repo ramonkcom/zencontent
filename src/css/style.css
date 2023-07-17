@@ -23,11 +23,11 @@ Text Domain: zencontent
     @apply transition-all;
   }
   article a {
-    @apply font-medium border-dotted border-b-2 text-stone-800 hover:text-stone-600 border-stone-400 dark:text-stone-200 dark:hover:text-stone-400 dark:border-stone-500;
+    @apply font-medium border-b-2 text-stone-800 border-stone-400 hover:text-stone-600 hover:border-stone-600 dark:text-stone-200 dark:hover:text-stone-400 dark:border-stone-600 dark:hover:border-stone-400;
   }
   article ol li,
   article ul li {
-    @apply border-b border-dotted border-stone-400 dark:border-stone-500 py-1;
+    @apply border-b border-dotted border-stone-400 dark:border-stone-600 py-1;
   }
   article ol li:last-child,
   article ul li:last-child {
@@ -40,7 +40,7 @@ Text Domain: zencontent
     @apply list-disc list-inside;
   }
   body {
-    @apply font-serif leading-7 bg-stone-300 text-stone-700 dark:bg-stone-700 dark:text-stone-300 font-light;
+    @apply font-serif leading-7 bg-stone-300 text-stone-700 dark:bg-stone-700 dark:text-stone-300;
   }
   h1,
   h2,
@@ -76,25 +76,16 @@ Text Domain: zencontent
   h6 {
     @apply text-base;
   }
-  blockquote,
-  dl,
-  figure,
-  ol,
-  p,
-  pre,
-  table,
-  ul {
+  main > blockquote,
+  main > div,
+  main > dl,
+  main > figure,
+  main > ol,
+  main > p,
+  main > pre,
+  main > table,
+  main > ul {
     @apply mt-6;
-  }
-  blockquote:first-child,
-  dl:first-child,
-  figure:first-child,
-  ol:first-child,
-  p:first-child,
-  pre:first-child,
-  table:first-child,
-  ul:first-child {
-    @apply mt-0;
   }
   blockquote {
     @apply ml-7 before:content-['“'] before:font-serif before:text-6xl before:absolute before:-ml-8 before:mt-[-0.25em] before:text-stone-400 before:dark:text-stone-600;
@@ -115,22 +106,24 @@ Text Domain: zencontent
 
 @layer components {
   .btn {
-    @apply inline-block font-sans text-sm font-normal px-4 py-2 border rounded bg-stone-200 text-stone-800 hover:text-stone-900 border-stone-300 hover:bg-stone-100 dark:bg-stone-600 dark:text-stone-200 dark:border-stone-700 hover:dark:bg-stone-500 dark:hover:text-stone-200;
+    @apply inline-block transition-all font-sans text-sm font-normal px-4 py-2 border rounded bg-stone-200 text-stone-800 hover:text-stone-900 border-stone-300 hover:bg-stone-100 dark:bg-stone-600 dark:text-stone-200 dark:border-stone-700 hover:dark:bg-stone-500 dark:hover:text-stone-200;
   }
   .container {
     @apply mx-auto px-4 max-w-[48rem];
   }
-  .container > *:not(.wide) {
-    @apply sm:mx-[3rem];
+
+  .container > div,
+  .container > footer,
+  .container > header,
+  .container > main > *:not(.wide) {
+    @apply sm:mx-[3em];
   }
-  .container .wide,
-  .container > .wp-block-image,
-  .container > .wp-block-gallery,
-  .container > .wp-block-embed.wp-has-aspect-ratio {
-    @apply mx-auto after:content-[""] after:block after:w-full after:h-3 before:content-[""] before:block before:w-full before:h-3;
-  }
-  .container .wp-block-embed .wp-block-embed__wrapper div,
-  .container .wp-block-embed .wp-block-embed__wrapper iframe {
+  .container > main > .wide,
+  .container > main > .wp-block-image,
+  .container > main > .wp-block-gallery,
+  .container > main > .wp-block-embed.wp-has-aspect-ratio,
+  .container > main > .wp-block-embed .wp-block-embed__wrapper div,
+  .container > main > .wp-block-embed .wp-block-embed__wrapper iframe {
     @apply mx-auto;
   }
   .level-1 {

@@ -1,6 +1,6 @@
 <?php if ($args['context'] === 'loop'): ?>
 
-    <div class="flex justify-between font-sans font-normal mt-8">
+    <div class="flex justify-between">
         <div>
             <?php
             if (get_previous_posts_link()):
@@ -51,7 +51,7 @@
         return $previous ? '← ' . $label : $label . ' →';
     }
     ?>
-    <div class="flex justify-between mt-12">
+    <div class="flex justify-between">
         <div>
             <?php
             if ($previous_post = get_adjacent_post(false, '', false)):

@@ -1,21 +1,26 @@
 <?php get_header() ?>
 
 <?php if (have_posts()):
-    while (have_posts()): ?>
-        <article id="post-<?php the_ID(); ?>" <?php post_class('py-4 post-single'); ?>>
-            <div class="container py-16">
-                <?php
-                the_post();
-                $format = get_post_format() ? get_post_format() : 'standard';
-                get_template_part('template-parts/post/single', $format);
-                ?>
-                <?php get_template_part('template-parts/meta', ''); ?>
-                <?php get_template_part('template-parts/pagination', '', array('context' => 'single')); ?>
+    while (have_posts()):
+        the_post();
+        $format = get_post_format() ? get_post_format() : 'standard'; ?>
+        <article id="post-<?php the_ID(); ?>" <?php post_class('py-[4em] post-single'); ?>>
+            <div class="container">
+                <div class="mb-[1.5em]">
+                    <?php get_template_part('template-parts/post/meta', 'categories'); ?>
+                </div>
+                <?php get_template_part('template-parts/post/single', $format); ?>
+                <footer class="mt-[1.5em]">
+                    <?php get_template_part('template-parts/post/meta', 'tags'); ?>
+                </footer>
             </div><!-- .container -->
         </article>
+        <nav class="container py-[4em] border-t border-stone-400 dark:border-stone-600">
+            <?php get_template_part('template-parts/pagination', '', array('context' => 'single')); ?>
+        </nav>
     <?php endwhile; ?>
 <?php else: ?>
-    <div class="container py-16">
+    <div class="container py-[4em]">
         <p>
             <?php _e('Post not found.', 'zencontent'); ?>
         </p>
