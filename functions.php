@@ -77,6 +77,11 @@ function zenc_document_title($title)
 
 add_filter('pre_get_document_title', 'zenc_document_title');
 
+function zenc_read_more_link()
+{
+    return '<div class="flex justify-end"><a class="btn-xs" href="' . get_permalink() . '">' . __('Read more', 'zencontent') . ' ↗</a></div>';
+}
+add_filter('the_content_more_link', 'zenc_read_more_link');
 
 function zenc_get_format_icon($format, $size = 16, $wrapper_class = '')
 {

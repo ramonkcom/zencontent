@@ -106,25 +106,27 @@ Text Domain: zencontent
 
 @layer components {
   .btn {
-    @apply inline-block transition-all font-sans text-sm font-normal px-4 py-2 border rounded bg-stone-200 text-stone-800 hover:text-stone-900 border-stone-300 hover:bg-stone-100 dark:bg-stone-600 dark:text-stone-200 dark:border-stone-700 hover:dark:bg-stone-500 dark:hover:text-stone-200;
+    @apply inline-block transition-all font-sans text-sm font-normal px-4 py-2 border rounded bg-stone-200 text-stone-800 hover:text-stone-900 border-stone-300 hover:border-stone-200 hover:bg-stone-100 dark:bg-stone-600 dark:text-stone-200 dark:border-stone-700 dark:hover:border-stone-600 dark:hover:bg-stone-500 dark:hover:text-stone-200;
+  }
+  .btn-xs {
+    @apply btn px-3 py-1 text-xs;
   }
   .container {
     @apply mx-auto px-4 max-w-[48rem];
   }
-
   .container > div,
   .container > footer,
   .container > header,
-  .container > main > *:not(.wide) {
-    @apply sm:mx-[3em];
+  .container > main > *:not(.wide):not(span) {
+    @apply sm:mx-[3rem];
   }
   .container > main > .wide,
-  .container > main > .wp-block-image,
-  .container > main > .wp-block-gallery,
+  .container > main > figure.wp-block-image,
+  .container > main > figure.wp-block-gallery,
   .container > main > .wp-block-embed.wp-has-aspect-ratio,
   .container > main > .wp-block-embed .wp-block-embed__wrapper div,
   .container > main > .wp-block-embed .wp-block-embed__wrapper iframe {
-    @apply mx-auto;
+    @apply sm:mx-auto;
   }
   .level-1 {
     @apply bg-stone-200 dark:bg-stone-600;

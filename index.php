@@ -1,5 +1,5 @@
 <?php get_header() ?>
-<div class="container py-[4em]">
+<div class="container py-[4rem]">
     <div>
         <?php get_search_form(); ?>
     </div>
@@ -37,23 +37,23 @@
     while (have_posts()):
         the_post();
         $format = get_post_format() ? get_post_format() : 'standard'; ?>
-        <article id="post-<?php the_ID(); ?>" <?php post_class('py-[4em] lg:mx-auto max-w-screen-lg border-t border-stone-400 dark:border-stone-600 border-dotted rounded post-abstract'); ?>>
+        <article id="post-<?php the_ID(); ?>" <?php post_class('py-[4rem] lg:mx-auto max-w-screen-lg border-t border-stone-500 dark:border-stone-500 border-dotted rounded post-abstract'); ?>>
             <div class="container">
-                <div class="mb-[1.5em]">
+                <div class="mb-[1.5rem]">
                     <?php get_template_part('template-parts/post/meta', 'categories'); ?>
                 </div>
                 <?php get_template_part('template-parts/post/abstract', $format); ?>
-                <footer class="mt-[1.5em]">
+                <footer class="mt-[1.5rem]">
                     <?php get_template_part('template-parts/post/meta', 'tags'); ?>
                 </footer>
                 <div><!-- .container -->
         </article>
     <?php endwhile; ?>
-    <nav class="container py-[4em] border-t border-stone-400 dark:border-stone-600">
+    <nav class="container py-[4rem] border-t border-stone-500 dark:border-stone-500">
     <?php get_template_part('template-parts/pagination', '', array('context' => 'loop')); ?>
     </nav>
 <?php else: ?>
-    <div class="container py-[4em]">
+    <div class="container py-[4rem]">
         <p>
             <?php _e('No posts found.', 'zencontent'); ?>
         </p>
