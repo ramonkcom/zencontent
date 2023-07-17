@@ -9,8 +9,15 @@
                 the_post_thumbnail($size = 'post-thumbnail', array('class' => 'w-full'));
             }
             ?>
-            <div class="container py-[4em]">
-                <?php the_content(); ?>
+            <div class="container py-[4rem]">
+                <header>
+                    <h1>
+                        <?php the_title(); ?>
+                    </h1>
+                </header>
+                <main>
+                    <?php the_content(); ?>
+                </main>
             </div><!-- .container -->
         </article>
     <?php endwhile; ?>
