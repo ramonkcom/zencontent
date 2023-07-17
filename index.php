@@ -49,7 +49,7 @@
                 <div><!-- .container -->
         </article>
     <?php endwhile; ?>
-    <nav class="container py-[4rem] border-t border-stone-500 dark:border-stone-500">
+    <nav class="container py-[4rem] border-t border-dotted border-stone-500 dark:border-stone-500">
     <?php get_template_part('template-parts/pagination', '', array('context' => 'loop')); ?>
     </nav>
 <?php else: ?>
