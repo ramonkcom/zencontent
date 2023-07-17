@@ -39,8 +39,20 @@ Text Domain: zencontent
   article ul {
     @apply list-disc list-inside;
   }
+  blockquote {
+    @apply ml-7 before:content-['“'] before:font-serif before:text-6xl before:absolute before:-ml-8 before:mt-[-0.25em] before:text-stone-400 before:dark:text-stone-600;
+  }
+  blockquote cite {
+    @apply block mt-[1em] font-bold font-sans not-italic text-sm before:content-["–"] before:mr-1;
+  }
+  blockquote p {
+    @apply font-serif italic text-2xl;
+  }
   body {
     @apply font-serif leading-7 bg-stone-300 text-stone-700 dark:bg-stone-700 dark:text-stone-300;
+  }
+  dt {
+    @apply font-normal;
   }
   h1,
   h2,
@@ -87,18 +99,7 @@ Text Domain: zencontent
   main > ul {
     @apply mt-6;
   }
-  blockquote {
-    @apply ml-7 before:content-['“'] before:font-serif before:text-6xl before:absolute before:-ml-8 before:mt-[-0.25em] before:text-stone-400 before:dark:text-stone-600;
-  }
-  blockquote cite {
-    @apply block mt-2 font-sans not-italic text-sm before:content-["–"] before:mr-1;
-  }
-  blockquote p {
-    @apply font-serif italic text-2xl;
-  }
-  dt {
-    @apply font-normal;
-  }
+
   pre {
     @apply overflow-x-auto font-mono font-normal bg-stone-950 text-stone-50 rounded p-4;
   }
