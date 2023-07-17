@@ -8,5 +8,4 @@
 
 <main>
     <?php the_content(); ?>
-    <?php get_template_part('template-parts/pagination', '', array('context' => 'post')); ?>
 </main>

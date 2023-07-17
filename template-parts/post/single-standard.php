@@ -8,9 +8,13 @@ if (wp_link_pages(array('echo' => 0))) {
 }
 ?>
 
-<h1 class="text-6xl font-medium">
-    <?php echo $title; ?>
-</h1>
+<header>
+    <h1>
+        <?php echo $title; ?>
+    </h1>
+</header>
 
-<?php the_content(); ?>
-<?php get_template_part('template-parts/pagination', '', array('context' => 'post')); ?>
+<main>
+    <?php the_content(); ?>
+    <?php get_template_part('template-parts/pagination', '', array('context' => 'post')); ?>
+</main>
