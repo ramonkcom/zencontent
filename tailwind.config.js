@@ -5,9 +5,9 @@ module.exports = {
   theme: {
     extend: {},
     fontFamily: {
-      sans: ['IBM Plex Sans', 'sans-serif'],
-      serif: ['Times New Roman', 'Georgia', 'serif'],
-      mono: ['IBM Plex Mono', 'monospace']
+      sans: ['Libre Franklin', 'sans-serif'],
+      serif: ['PT Serif', 'serif'],
+      mono: ['monospace'],
     }
   },
   plugins: [],

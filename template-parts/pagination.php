@@ -1,6 +1,6 @@
 <?php if ($args['context'] === 'loop'): ?>
 
-    <div class="flex justify-between font-mono font-normal mt-8">
+    <div class="flex justify-between font-sans font-normal mt-8">
         <div>
             <?php
             if (get_previous_posts_link()):
@@ -30,7 +30,7 @@
     <?php
     if (wp_link_pages(array('echo' => 0))) {
         $args = array(
-            'before' => '<nav class="font-mono flex space-x-1 mt-4"><span class="font-normal">' . __('Parts:', 'zencontent') . '</span>',
+            'before' => '<nav class="font-sans flex space-x-1 mt-4"><span class="font-normal">' . __('Parts:', 'zencontent') . '</span>',
             'after' => '</nav>',
             'pagelink' => '%',
             'nextpagelink' => __('Next part'),

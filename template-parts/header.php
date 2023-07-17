@@ -15,7 +15,7 @@
         wp_nav_menu(
             array(
                 'container' => 'nav',
-                'menu_class' => 'flex justify-between space-x-2 font-mono font-normal',
+                'menu_class' => 'flex justify-between space-x-2 font-sans font-normal',
                 'theme_location' => 'main_menu'
             )
         );

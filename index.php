@@ -35,9 +35,10 @@
     while (have_posts()):
         the_post(); ?>
         <?php $format = get_post_format() ? get_post_format() : 'standard'; ?>
-        <article id="post-<?php the_ID(); ?>" <?php post_class('border-t border-b border-stone-400 dark:border-stone-600 py-4 mt-[-1px] post-abstract'); ?>>
-            <div class="container">
-                <?php echo zenc_get_format_icon($format, 32); ?>
+        <article id="post-<?php the_ID(); ?>" <?php post_class('py-4 post-abstract'); ?>>
+            <div class="container relative">
+                <div class="w-full border-t border-stone-400 mx-[3rem] absolute -left-[40px] -top-[1em]"></div>
+                <?php echo zenc_get_format_icon($format, 20, 'border text-stone-400 border-stone-400 inline-block p-2 rounded absolute -left-[40px] -top-[1em]'); ?>
                 <?php get_template_part('template-parts/post/abstract', $format); ?>
                 <?php get_template_part('template-parts/meta', ''); ?>
                 <div><!-- .container -->

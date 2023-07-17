@@ -31,7 +31,7 @@ function zenc_assets($hook)
     $script_ver = date("ymd-Gis", filemtime(get_template_directory() . $script_path));
     wp_enqueue_script('zencontent-main-js', get_template_directory_uri() . $script_path, array('jquery'), $script_ver);
 
-    $fonts = "https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=IBM+Plex+Sans:ital,wght@0,300;0,500;1,300;1,500&display=swap";
+    $fonts = "https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,400;0,700;1,400;1,700&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap";
     wp_enqueue_style('google-fonts', $fonts, array());
 
     $style_path = '/assets/css/style.css';

@@ -60,7 +60,7 @@ html {
   -o-tab-size: 4;
      tab-size: 4;
   /* 3 */
-  font-family: IBM Plex Sans, sans-serif;
+  font-family: Libre Franklin, sans-serif;
   /* 4 */
   font-feature-settings: normal;
   /* 5 */
@@ -145,7 +145,7 @@ code,
 kbd,
 samp,
 pre {
-  font-family: IBM Plex Mono, monospace;
+  font-family: monospace;
   /* 1 */
   font-size: 1em;
   /* 2 */
@@ -505,7 +505,9 @@ article ul {
 body {
   --tw-bg-opacity: 1;
   background-color: rgb(214 211 209 / var(--tw-bg-opacity));
+  font-family: PT Serif, serif;
   font-weight: 300;
+  line-height: 1.75rem;
   --tw-text-opacity: 1;
   color: rgb(68 64 60 / var(--tw-text-opacity));
 }
@@ -525,7 +527,8 @@ h1,
   h6 {
   margin-top: 1em;
   margin-bottom: 0.25em;
-  font-weight: 400;
+  font-family: Libre Franklin, sans-serif;
+  font-weight: 700;
   letter-spacing: -0.025em;
 }
 
@@ -536,6 +539,7 @@ h1 a,
   h5 a,
   h6 a {
   border-width: 0px;
+  font-weight: 700;
 }
 
 h1 {
@@ -599,7 +603,7 @@ blockquote::before {
   position: absolute;
   margin-left: -2rem;
   margin-top: -0.25em;
-  font-family: Times New Roman, Georgia, serif;
+  font-family: PT Serif, serif;
   font-size: 3.75rem;
   line-height: 1;
   --tw-text-opacity: 1;
@@ -617,7 +621,7 @@ blockquote::before {
 blockquote cite {
   margin-top: 0.5rem;
   display: block;
-  font-family: IBM Plex Sans, sans-serif;
+  font-family: Libre Franklin, sans-serif;
   font-size: 0.875rem;
   line-height: 1.25rem;
   font-style: normal;
@@ -630,7 +634,7 @@ blockquote cite::before {
 }
 
 blockquote p {
-  font-family: Times New Roman, Georgia, serif;
+  font-family: PT Serif, serif;
   font-size: 1.5rem;
   line-height: 2rem;
   font-style: italic;
@@ -646,7 +650,7 @@ pre {
   --tw-bg-opacity: 1;
   background-color: rgb(12 10 9 / var(--tw-bg-opacity));
   padding: 1rem;
-  font-family: IBM Plex Mono, monospace;
+  font-family: monospace;
   font-weight: 400;
   --tw-text-opacity: 1;
   color: rgb(250 250 249 / var(--tw-text-opacity));
@@ -798,7 +802,7 @@ pre {
   padding-right: 1rem;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
-  font-family: IBM Plex Mono, monospace;
+  font-family: Libre Franklin, sans-serif;
   font-size: 0.875rem;
   line-height: 1.25rem;
   font-weight: 400;
@@ -905,6 +909,7 @@ pre {
 }
 
 .post-abstract h2 {
+  margin-top: 0px;
   font-size: 2.25rem;
   line-height: 2.5rem;
 }
@@ -921,6 +926,27 @@ pre {
   border-width: 0;
 }
 
+.absolute {
+  position: absolute;
+}
+
+.relative {
+  position: relative;
+}
+
+.-left-\[40px\] {
+  left: -40px;
+}
+
+.-top-\[1em\] {
+  top: -1em;
+}
+
+.mx-\[3rem\] {
+  margin-left: 3rem;
+  margin-right: 3rem;
+}
+
 .mt-12 {
   margin-top: 3rem;
 }
@@ -933,8 +959,8 @@ pre {
   margin-top: 2rem;
 }
 
-.mt-\[-1px\] {
-  margin-top: -1px;
+.inline-block {
+  display: inline-block;
 }
 
 .flex {
@@ -981,8 +1007,8 @@ pre {
   border-radius: 0.25rem;
 }
 
-.border-b {
-  border-bottom-width: 1px;
+.border {
+  border-width: 1px;
 }
 
 .border-t {
@@ -1005,6 +1031,10 @@ pre {
 
 .p-0 {
   padding: 0px;
+}
+
+.p-2 {
+  padding: 0.5rem;
 }
 
 .px-2 {
@@ -1037,7 +1067,11 @@ pre {
 }
 
 .font-mono {
-  font-family: IBM Plex Mono, monospace;
+  font-family: monospace;
+}
+
+.font-sans {
+  font-family: Libre Franklin, sans-serif;
 }
 
 .text-2xl {
@@ -1092,11 +1126,6 @@ pre {
 :is(.dark .dark\:border-stone-500) {
   --tw-border-opacity: 1;
   border-color: rgb(120 113 108 / var(--tw-border-opacity));
-}
-
-:is(.dark .dark\:border-stone-600) {
-  --tw-border-opacity: 1;
-  border-color: rgb(87 83 78 / var(--tw-border-opacity));
 }
 
 :is(.dark .dark\:text-stone-400) {

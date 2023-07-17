@@ -3,7 +3,7 @@
         <span class="sr-only">
             <?php _e('Pesquisar:', 'zencontent'); ?>
         </span>
-        <input type="search" class="font-mono text-sm font-normal rounded py-2 px-2"
+        <input type="search" class="font-sans text-sm font-normal rounded py-2 px-2"
             placeholder="<?php _e('Type your search term...', 'zencontent'); ?>"
             value="<?php echo get_search_query(); ?>" name="s" />
     </label>
