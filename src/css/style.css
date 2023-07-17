@@ -48,7 +48,7 @@ Text Domain: zencontent
   h4,
   h5,
   h6 {
-    @apply font-normal mt-[1em] mb-[0.25em];
+    @apply font-normal mt-[1em] mb-[0.25em] tracking-tight;
   }
   h1 a,
   h2 a,
