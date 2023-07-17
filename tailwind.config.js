@@ -1,14 +1,14 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./**/*.{php,html,js}"],
+  content: ["./**/*.php"],
   darkMode: 'class',
   theme: {
     extend: {},
     fontFamily: {
-      sans: ['IBM Plex Sans', 'sans-serif'],
-      serif: ['Georgia', 'serif'],
-      mono: ['IBM Plex Mono', 'monospace']
-    },
+      sans: ['Libre Franklin', 'sans-serif'],
+      serif: ['PT Serif', 'serif'],
+      mono: ['monospace'],
+    }
   },
   plugins: [],
 }
