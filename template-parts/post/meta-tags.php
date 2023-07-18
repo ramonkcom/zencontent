@@ -1,6 +1,6 @@
-<div class="text-[0.75em] lowercase font-mono font-normal text-stone-600 dark:text-stone-400">
+<div class="text-[0.75em] lowercase font-mono leading-snug font-normal text-stone-600 dark:text-stone-400">
     <?php if ($tags = get_the_tags()): ?>
-        <ul class="flex space-x-2 list-none">
+        <ul class="flex flex-wrap space-x-2 list-none">
             <?php foreach ($tags as $tag): ?>
                 <li class="p-0 border-none">
                     <a href="<?php echo get_tag_link($tag->term_id); ?>"
