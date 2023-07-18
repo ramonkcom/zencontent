@@ -14,9 +14,11 @@
                 </span>
             <?php endif; ?>
         </a>
-        <span class="font-sans mt-[.5em] leading-none text-xs hidden md:block">
-            <?php bloginfo('description'); ?>
-        </span>
+        <?php if (get_theme_mod('show_tagline', false)): ?>
+            <span class="font-sans mt-[.5em] leading-none text-xs hidden md:block">
+                <?php bloginfo('description'); ?>
+            </span>
+        <?php endif ?>
     </div>
 
     <div>
