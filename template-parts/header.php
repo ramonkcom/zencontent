@@ -1,4 +1,4 @@
-<header class="sticky z-10 top-0 flex items-center justify-between h-[3.5rem] md:h-[5rem] px-4 level-1">
+<header class="sticky z-10 top-0 flex items-center justify-between h-[3.5rem] md:h-[5rem] px-4 level-1 shadow-md">
     <div class="flex flex-col">
         <a href="<?php echo home_url(); ?>" class="leading-none inline-block">
             <?php
@@ -26,8 +26,8 @@
         wp_nav_menu(
             array(
                 'container' => 'nav',
-                'container_class' => 'hidden md:block flex',
-                'menu_class' => 'font-sans md:flex md:justify-between md:space-x-4',
+                'container_class' => 'main-menu hidden md:block flex',
+                'menu_class' => 'font-sans font-bold md:flex md:justify-between md:space-x-4 leading-relaxed',
                 'theme_location' => 'main_menu'
             )
         );
