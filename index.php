@@ -1,5 +1,5 @@
 <?php get_header() ?>
-<div class="container py-[4rem]">
+<div class="max-w-[58rem] mx-auto py-[4rem] border-b border-dotted border-stone-500 dark:border-stone-500">
     <div>
         <?php get_search_form(); ?>
     </div>
@@ -37,23 +37,23 @@
     while (have_posts()):
         the_post();
         $format = get_post_format() ? get_post_format() : 'standard'; ?>
-        <article id="post-<?php the_ID(); ?>" <?php post_class('relative py-[4rem] lg:mx-auto max-w-screen-xl border-t border-stone-500 dark:border-stone-500 border-dotted rounded post-abstract'); ?>>
+        <article id="post-<?php the_ID(); ?>" <?php post_class('relative lg:mx-auto max-w-[58rem] post-abstract my-[6rem]'); ?>>
             <span
-                class="absolute p-4 border border-dotted rounded border-stone-500 dark:border-stone-500 text-stone-500 dark:text-stone-500 top-0 -mt-[1px]">
-                <?php echo zenc_get_format_icon($format, '1rem'); ?>
+                class="absolute opacity-75 dark:opacity-100 hover:opacity-100 transition-all p-[1rem] rounded rouded-full border border-stone-400 hover:border-stone-700 text-stone-400 hover:text-stone-700 dark:border-stone-600 dark:text-stone-600 dark:hover:border-stone-300 dark:hover:text-stone-300 top-0 mt-[.5rem]">
+                <?php echo zenc_get_format_icon($format, '1.5rem'); ?>
             </span>
             <div class="container">
-                <div class="mb-[1.5rem]">
+                <div class="mb-[1rem]">
                     <?php get_template_part('template-parts/post/meta', 'categories'); ?>
                 </div>
                 <?php get_template_part('template-parts/post/abstract', $format); ?>
-                <footer class="mt-[1.5rem]">
+                <footer class="mt-[1rem]">
                     <?php get_template_part('template-parts/post/meta', 'tags'); ?>
                 </footer>
                 <div><!-- .container -->
         </article>
     <?php endwhile; ?>
-    <nav class="container py-[4rem] border-t border-dotted border-stone-500 dark:border-stone-500">
+    <nav class="max-w-[58rem] mx-auto py-[4rem] border-t border-dotted border-stone-500 dark:border-stone-500">
     <?php get_template_part('template-parts/pagination', '', array('context' => 'loop')); ?>
     </nav>
 <?php else: ?>
