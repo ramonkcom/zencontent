@@ -1,4 +1,5 @@
-<header class="sticky z-10 top-0 flex items-center justify-between h-[3.5rem] md:h-[5rem] px-4 level-1 shadow-md">
+<header
+    class="js-main-header transition-opacity duration-200 z-10 flex items-center justify-between h-[3.5rem] md:h-[5rem] px-4 level-1 shadow-md">
     <div class="flex flex-col">
         <a href="<?php echo home_url(); ?>" class="leading-none inline-block">
             <?php
