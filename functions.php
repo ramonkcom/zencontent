@@ -9,9 +9,9 @@ function zenc_setup()
     add_theme_support(
         'custom-logo',
         array(
-            'height' => 60,
-            'flex-height' => false,
-            'flex-width' => true,
+            'height' => 30,
+            'flex_height' => true,
+            'flex_width' => true,
         )
     );
 
@@ -22,7 +22,6 @@ function zenc_setup()
 
     register_nav_menu('main_menu', __('Main Menu', 'zencontent'));
 }
-
 add_action('after_setup_theme', 'zenc_setup');
 
 function zenc_assets($hook)
@@ -38,7 +37,6 @@ function zenc_assets($hook)
     $style_ver = date("ymd-Gis", filemtime(get_template_directory() . $style_path));
     wp_enqueue_style('zencontent-main-css', get_template_directory_uri() . $style_path, array('google-fonts'), $style_ver);
 }
-
 add_action('wp_enqueue_scripts', 'zenc_assets');
 
 function zenc_script_tag($tag, $handle, $src)
@@ -50,7 +48,6 @@ function zenc_script_tag($tag, $handle, $src)
     $tag = '<script type="module" src="' . esc_url($src) . '"></script>';
     return $tag;
 }
-
 add_filter('script_loader_tag', 'zenc_script_tag', 10, 3);
 
 function zenc_document_title($title)
@@ -74,7 +71,6 @@ function zenc_document_title($title)
     }
     return $title;
 }
-
 add_filter('pre_get_document_title', 'zenc_document_title');
 
 function zenc_read_more_link()
@@ -82,6 +78,56 @@ function zenc_read_more_link()
     return '<p><a href="' . get_permalink() . '" title="' . get_the_title() . '" class="italic">(' . __('Read more', 'zencontent') . ' ...)</a></p>';
 }
 add_filter('the_content_more_link', 'zenc_read_more_link');
+
+function zenc_customizer($wp_customize)
+{
+    $site_identity_section = $wp_customize->get_section('title_tagline');
+
+    if ($site_identity_section) {
+        $wp_customize->add_setting(
+            'dark_mode_logo',
+            array(
+                'default' => '',
+                'sanitize_callback' => 'absint',
+            )
+        );
+
+        $wp_customize->add_control(
+            new WP_Customize_Cropped_Image_Control(
+                $wp_customize,
+                'dark_mode_logo',
+                array(
+                    'label' => __('Logo (dark mode)', 'zencontent'),
+                    'section' => 'title_tagline',
+                    'settings' => 'dark_mode_logo',
+                    'priority' => 8,
+                    'height' => 30,
+                    'flex_height' => true,
+                    'flex_width' => true,
+                )
+            )
+        );
+
+        $wp_customize->add_setting(
+            'show_tagline',
+            array(
+                'default' => false,
+                'sanitize_callback' => 'absint',
+            )
+        );
+
+        $wp_customize->add_control(
+            'show_tagline',
+            array(
+                'label' => __('Show tagline?', 'zencontent'),
+                'section' => 'title_tagline',
+                'type' => 'checkbox',
+                'priority' => 10,
+            )
+        );
+    }
+}
+add_action('customize_register', 'zenc_customizer');
 
 function zenc_get_format_icon($format, $size = 16, $wrapper_class = '')
 {
@@ -136,5 +182,4 @@ function zenc_get_format_icon($format, $size = 16, $wrapper_class = '')
         '</svg>' .
         '</span>'
     );
-
 }
