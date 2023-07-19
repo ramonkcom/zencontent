@@ -9,9 +9,9 @@ function zenc_setup()
     add_theme_support(
         'custom-logo',
         array(
-            'height' => 60,
-            'flex-height' => false,
-            'flex-width' => true,
+            'height' => 30,
+            'flex_height' => true,
+            'flex_width' => true,
         )
     );
 
@@ -83,23 +83,49 @@ function zenc_customizer($wp_customize)
 {
     $site_identity_section = $wp_customize->get_section('title_tagline');
 
-    if (!$site_identity_section)
-        return;
+    if ($site_identity_section) {
+        $wp_customize->add_setting(
+            'dark_mode_logo',
+            array(
+                'default' => '',
+                'sanitize_callback' => 'absint',
+            )
+        );
 
-    $wp_customize->add_setting('show_tagline', array(
-        'default' => false,
-        'sanitize_callback' => 'absint',
-    )
-    );
+        $wp_customize->add_control(
+            new WP_Customize_Cropped_Image_Control(
+                $wp_customize,
+                'dark_mode_logo',
+                array(
+                    'label' => __('Logo (dark mode)', 'zencontent'),
+                    'section' => 'title_tagline',
+                    'settings' => 'dark_mode_logo',
+                    'priority' => 8,
+                    'height' => 30,
+                    'flex_height' => true,
+                    'flex_width' => true,
+                )
+            )
+        );
 
-    // Adicione o controle
-    $wp_customize->add_control('show_tagline', array(
-        'label' => __('Show tagline?', 'zencontent'),
-        'section' => 'title_tagline',
-        'type' => 'checkbox',
-        'priority' => 10,
-    )
-    );
+        $wp_customize->add_setting(
+            'show_tagline',
+            array(
+                'default' => false,
+                'sanitize_callback' => 'absint',
+            )
+        );
+
+        $wp_customize->add_control(
+            'show_tagline',
+            array(
+                'label' => __('Show tagline?', 'zencontent'),
+                'section' => 'title_tagline',
+                'type' => 'checkbox',
+                'priority' => 10,
+            )
+        );
+    }
 }
 add_action('customize_register', 'zenc_customizer');
 
