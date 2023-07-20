@@ -101,6 +101,7 @@
   }
   .container > div,
   .container > footer,
+  .container > form,
   .container > header,
   .container > main > *:not(.wide):not(span) {
     @apply sm:mx-[3rem];
