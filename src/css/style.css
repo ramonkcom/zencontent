@@ -55,7 +55,7 @@
     @apply font-bold border-0;
   }
   h1 {
-    @apply text-6xl mt-0;
+    @apply text-4xl md:text-6xl mt-0;
   }
   h2 {
     @apply text-3xl;
@@ -127,6 +127,6 @@
     @apply bg-red-500 text-white text-base; /* because it shouldn't happen */
   }
   .post-abstract h2 {
-    @apply text-4xl mt-0;
+    @apply md:text-4xl mt-0;
   }
 }
