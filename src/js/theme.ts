@@ -1,17 +1,3 @@
-export function getPreferredTheme(): string {
-  return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-}
-
-export function getCurrentTheme(): string {
-  return document.documentElement.dataset.theme || 'light'
-}
-
-export function getSavedTheme(): string {
-  const theme = localStorage.getItem('theme');
-  if (!theme) return getPreferredTheme();
-  else return theme;
-}
-
 export function initControls(): void {
   const controls = document.querySelectorAll('.js-theme-switcher')
   controls.forEach(control => {
@@ -22,9 +8,6 @@ export function initControls(): void {
 }
 
 export function loadTheme(): void {
-  const theme = getSavedTheme();
-  if (!('theme' in localStorage)) localStorage.setItem('theme', theme);
-  setTheme(theme);
   initControls();
 }
 
@@ -40,7 +23,8 @@ export function setTheme(theme: string):string {
 }
 
 export function toggleTheme():string {
-  const newTheme = getCurrentTheme() === 'light' ? 'dark' : 'light';
+  const currentTheme = document.documentElement.dataset.theme || 'light';
+  const newTheme = currentTheme === 'light' ? 'dark' : 'light';
   setTheme(newTheme);
   return newTheme
 }

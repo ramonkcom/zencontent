@@ -41,11 +41,11 @@ add_action('wp_enqueue_scripts', 'zenc_assets');
 
 function zenc_script_tag($tag, $handle, $src)
 {
-    if (!str_contains($handle, 'zencontent')) {
+    if (!str_contains($handle, 'zencontent') || str_contains($handle, 'nodefer')) {
         return $tag;
     }
 
-    $tag = '<script type="module" src="' . esc_url($src) . '"></script>';
+    $tag = '<script src="' . esc_url($src) . '" defer></script>';
     return $tag;
 }
 add_filter('script_loader_tag', 'zenc_script_tag', 10, 3);
