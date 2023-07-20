@@ -1,35 +1,33 @@
 <?php get_header() ?>
 <div class="max-w-[58rem] mx-auto py-[4rem] border-b border-dotted border-stone-500 dark:border-stone-500">
-    <div>
-        <?php get_search_form(); ?>
-    </div>
-
-    <div class="bg-yellow-500 text-black">
+    <p class="mb-4">
         <?php if (is_home()): ?>
-            <p>This is home.</p>
+            <?php
+            $long_desc = trim(get_theme_mod('blog_long_description', ''));
+            if ($long_desc != ''):
+                ?>
+                <?php echo $long_desc; ?>
+            <?php endif; ?>
         <?php elseif (is_search()): ?>
-            <p>This is search for
-                <?php echo get_search_query(); ?>.
-            </p>
+            This is search for
+            <?php echo get_search_query(); ?>.
         <?php elseif (is_category()): ?>
-            <p>This is category
-                <?php single_cat_title(); ?>.
-            </p>
+            This is category
+            <?php single_cat_title(); ?>.
             <?php if (!empty($cat_description = category_description())): ?>
-                <p>
-                    <?php echo $cat_description; ?>
-                </p>
+                <?php echo $cat_description; ?>
             <?php endif; ?>
         <?php elseif (is_tag()): ?>
-            <p>This is tag
-                <?php single_tag_title(); ?>.
-            </p>
+            This is tag
+            <?php single_tag_title(); ?>.
             <?php if (!empty($tag_description = tag_description())): ?>
-                <p>
-                    <?php echo $tag_description; ?>
-                </p>
+                <?php echo $tag_description; ?>
             <?php endif; ?>
         <?php endif ?>
+    </p>
+
+    <div>
+        <?php get_search_form(); ?>
     </div>
 </div><!-- .container -->
 
