@@ -30,7 +30,7 @@
     @apply block mt-[1em] font-bold font-sans not-italic text-sm before:content-["–"] before:mr-1;
   }
   blockquote p {
-    @apply font-serif italic text-2xl;
+    @apply font-serif italic text-xl md:text-2xl;
   }
   body {
     @apply font-serif leading-7 bg-stone-300 text-stone-700 dark:bg-stone-700 dark:text-stone-300;
