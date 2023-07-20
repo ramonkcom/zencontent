@@ -125,6 +125,24 @@ function zenc_customizer($wp_customize)
                 'priority' => 10,
             )
         );
+
+        $wp_customize->add_setting(
+            'footer_line',
+            array(
+                'default' => __('This is a place for curation and self expression.', 'zencontent'),
+                'sanitize_callback' => 'sanitize_text_field',
+            )
+        );
+
+        $wp_customize->add_control(
+            'footer_line',
+            array(
+                'label' => __('Footer text', 'zencontent'),
+                'section' => 'title_tagline',
+                'type' => 'text',
+                'priority' => 15,
+            )
+        );
     }
 }
 add_action('customize_register', 'zenc_customizer');
