@@ -36,6 +36,13 @@ export function loadScroll() {
   window.onscroll = function() {
     if (scrollTimeout) clearTimeout(scrollTimeout);
 
+    if (headerClone && window.scrollY >= lastScrollPos && headerClone.style.display != 'none') {
+      headerClone.style.opacity = '0';
+      setTimeout(function(){
+        headerClone.style.display = 'none';
+      }, 200);
+    }
+
     scrollTimeout = setTimeout(function(){
       if (scrollToTop) {
         if (window.scrollY > window.innerHeight) {
@@ -45,21 +52,14 @@ export function loadScroll() {
         }
       }
 
-      if (headerClone) {
-        if (window.scrollY >= lastScrollPos) {
-          headerClone.style.opacity = '0';
-          setTimeout(function(){
-            headerClone.style.display = 'none';
-          }, 200);
-        } else if (window.scrollY < lastScrollPos && window.scrollY > window.innerHeight) {
-          headerClone.style.display = 'flex';
-          setTimeout(function(){
-            headerClone.style.opacity = '100';
-          }, 10);
-        }
+      if (headerClone && window.scrollY < lastScrollPos && window.scrollY > window.innerHeight) {
+        headerClone.style.display = 'flex';
+        setTimeout(function(){
+          headerClone.style.opacity = '100';
+        }, 10);
       }
           
       lastScrollPos = window.scrollY;
-    }, 10);
+    }, 100);
   }
 }
