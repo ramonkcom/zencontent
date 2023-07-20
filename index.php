@@ -1,32 +1,44 @@
 <?php get_header() ?>
-<div class="max-w-[58rem] mx-auto py-[4rem] border-b border-dotted border-stone-500 dark:border-stone-500">
-    <p class="mb-4">
-        <?php if (is_home()): ?>
-            <?php
-            $long_desc = trim(get_theme_mod('blog_long_description', ''));
-            if ($long_desc != ''):
-                ?>
+<div
+    class="max-w-[58rem] mx-auto py-[4rem] px-[1rem] border-b border-dotted border-stone-500 dark:border-stone-500 text-center">
+    <?php if (is_home()): ?>
+        <h1 class="mb-[.25em]">
+            <?php echo bloginfo('title') ?>
+        </h1>
+        <?php if (!empty($long_desc = trim(get_theme_mod('blog_long_description', '')))): ?>
+            <p class="text-xl md:text-2xl">
                 <?php echo $long_desc; ?>
-            <?php endif; ?>
-        <?php elseif (is_search()): ?>
-            This is search for
-            <?php echo get_search_query(); ?>.
-        <?php elseif (is_category()): ?>
-            This is category
-            <?php single_cat_title(); ?>.
-            <?php if (!empty($cat_description = category_description())): ?>
-                <?php echo $cat_description; ?>
-            <?php endif; ?>
-        <?php elseif (is_tag()): ?>
-            This is tag
-            <?php single_tag_title(); ?>.
-            <?php if (!empty($tag_description = tag_description())): ?>
-                <?php echo $tag_description; ?>
-            <?php endif; ?>
-        <?php endif ?>
-    </p>
+            </p>
+        <?php endif; ?>
+    <?php elseif (is_search()): ?>
+        <?php $search_query = trim(get_search_query()); ?>
+        <h1 class="mb-[.25em]">
+            <?php echo '"' . $search_query . '"'; ?>
+        </h1>
+        <p class="text-xl md:text-2xl">
+            <?php echo __('Below, all the results found for the search term ') . '"' . $search_query . '".' ?>
+        </p>
+    <?php elseif (is_category()): ?>
+        <h1 class="mb-[.25em]">
+            <?php single_cat_title(); ?>
+        </h1>
+        <?php if (!empty($cat_description = category_description())): ?>
+            <p class="text-xl md:text-2xl">
+                <?php echo wp_strip_all_tags($cat_description); ?>
+            </p>
+        <?php endif; ?>
+    <?php elseif (is_tag()): ?>
+        <h1 class="mb-[.25em]">
+            <?php single_tag_title(); ?>
+        </h1>
+        <?php if (!empty($tag_description = tag_description())): ?>
+            <p class="text-xl md:text-2xl">
+                <?php echo wp_strip_all_tags($tag_description); ?>
+            </p>
+        <?php endif; ?>
+    <?php endif ?>
 
-    <div>
+    <div class="mt-[2rem]">
         <?php get_search_form(); ?>
     </div>
 </div><!-- .container -->
