@@ -4,6 +4,6 @@ import { loadTheme } from './theme';
 
 window.onload = function() {
   loadMenu();
-  loadTheme();
   loadHeader();
+  loadTheme();
 }
