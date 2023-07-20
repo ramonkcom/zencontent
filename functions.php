@@ -81,6 +81,24 @@ add_filter('the_content_more_link', 'zenc_read_more_link');
 
 function zenc_customizer($wp_customize)
 {
+    class WP_Customize_Textarea_Control extends WP_Customize_Control
+    {
+
+        public $type = 'text';
+
+        public function render_content()
+        {
+            ?>
+            <label>
+                <span class="customize-control-title">
+                    <?php echo esc_html($this->label); ?>
+                </span>
+                <textarea rows="5" style="width:100%;" <?php $this->link(); ?>><?php echo esc_textarea($this->value()); ?></textarea>
+            </label>
+            <?php
+        }
+    }
+
     $site_identity_section = $wp_customize->get_section('title_tagline');
 
     if ($site_identity_section) {
@@ -123,6 +141,26 @@ function zenc_customizer($wp_customize)
                 'section' => 'title_tagline',
                 'type' => 'checkbox',
                 'priority' => 10,
+            )
+        );
+
+        $wp_customize->add_setting(
+            'blog_long_description',
+            array(
+                'default' => __('This is a zen place for content curation and self expression.', 'zencontent'),
+                'sanitize_callback' => 'wp_kses_post',
+            )
+        );
+
+        $wp_customize->add_control(
+            new WP_Customize_Textarea_Control(
+                $wp_customize,
+                'blog_long_description',
+                array(
+                    'label' => __('Long description', 'zencontent'),
+                    'section' => 'title_tagline',
+                    'settings' => 'blog_long_description',
+                )
             )
         );
 
