@@ -41,7 +41,6 @@
             )
         );
         ?>
-
         <button
             class="js-theme-switcher btn p-[.625rem] mr-2 md:mr-0 md:ml-4 md:border-stone-300 md:hover:border-stone-400 md:dark:border-stone-500 dark:md:hover:border-stone-400 md:text-stone-500 md:hover:text-stone-800 md:dark:text-stone-400 md:dark:hover:text-stone-100"
             title="<?php _e('Toggle theme', 'zencontent'); ?>" aria-label="<?php _e('Toggle theme', 'zencontent'); ?>">
@@ -60,24 +59,27 @@
                 </svg>
             </span>
         </button>
-
-        <button class="js-menu-open btn p-[.5rem] md:hidden">
-            <svg xmlns="http://www.w3.org/2000/svg" width="1rem" height="1rem" fill="currentColor" viewBox="0 0 16 16">
-                <path fill-rule="evenodd"
-                    d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
-            </svg>
-        </button>
-        <button class="js-menu-close btn hidden p-[.5rem] md:hidden">
-            <svg xmlns="http://www.w3.org/2000/svg" width="1rem" height="1rem" fill="currentColor" viewBox="0 0 16 16">
-                <path
-                    d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z" />
-            </svg>
+        <button class="js-menu-toggle btn p-[.5rem] md:hidden">
+            <span class="js-menu-toggle__open-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="1rem" height="1rem" fill="currentColor"
+                    viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                        d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+                </svg>
+            </span>
+            <span class="js-menu-toggle__close-icon hidden">
+                <svg xmlns="http://www.w3.org/2000/svg" width="1rem" height="1rem" fill="currentColor"
+                    viewBox="0 0 16 16">
+                    <path
+                        d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z" />
+                </svg>
+            </span>
         </button>
     </div>
 </header>
 
 <nav
-    class="js-menu hidden px-4 font-bold text-right fixed z-10 top-[3.5rem] left-0 w-full h-full transition-opacity opacity-0 text-3xl leading-relaxed bg-stone-300/90 dark:bg-stone-700/90  py-[1rem] md:hidden">
+    class="js-menu hidden px-4 font-bold text-right fixed z-10 top-[3.5rem] left-0 w-full h-full transition-opacity opacity-0 duration-200 text-3xl leading-relaxed bg-stone-300/90 dark:bg-stone-700/90  py-[1rem] md:hidden">
     <?php
     wp_nav_menu(
         array(
