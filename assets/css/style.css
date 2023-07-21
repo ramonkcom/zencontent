@@ -1029,6 +1029,10 @@ pre {
   margin-top: 2rem;
 }
 
+.-mt-\[1rem\] {
+  margin-top: -1rem;
+}
+
 .block {
   display: block;
 }
@@ -1280,6 +1284,20 @@ pre {
   line-height: 1rem;
 }
 
+.text-base {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.text-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
+.text-\[1\.5rem\] {
+  font-size: 1.5rem;
+}
+
 .font-bold {
   font-weight: 700;
 }
@@ -1314,6 +1332,10 @@ pre {
 
 .leading-snug {
   line-height: 1.375;
+}
+
+.leading-loose {
+  line-height: 2;
 }
 
 .text-stone-400 {
