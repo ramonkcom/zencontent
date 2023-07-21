@@ -1031,6 +1031,21 @@ pre {
   margin-right: auto;
 }
 
+.my-\[1rem\] {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.my-\[1\.5rem\] {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.my-\[1\.5em\] {
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+}
+
 .-mt-\[\.25em\] {
   margin-top: -.25em;
 }
@@ -1097,6 +1112,18 @@ pre {
 
 .mb-\[1em\] {
   margin-bottom: 1em;
+}
+
+.mb-\[1\2c 5em\] {
+  margin-bottom: 1,5em;
+}
+
+.mb-\[2\.5em\] {
+  margin-bottom: 2.5em;
+}
+
+.mt-\[0rem\] {
+  margin-top: 0rem;
 }
 
 .block {
