@@ -1,8 +1,8 @@
 <?php get_header() ?>
-<div class="max-w-[58rem] mx-auto mt-0 py-[4rem] px-[1rem] text-center">
+<div class="max-w-[58rem] mx-auto mt-0 py-[6rem] px-[1rem] text-center">
     <?php if (is_home()): ?>
         <h1 class="mb-[.25em]">
-            <?php echo bloginfo('title') ?>
+            <?php bloginfo('description'); ?>
         </h1>
         <?php if (!empty($long_desc = trim(get_theme_mod('blog_long_description', '')))): ?>
             <p class="text-xl md:text-2xl">
@@ -68,7 +68,7 @@
     <?php get_template_part('template-parts/pagination', '', array('context' => 'loop')); ?>
     </nav>
 <?php else: ?>
-    <div class="container py-[4rem]">
+    <div class="container py-[3rem] border-t border-dotted border-stone-400 dark:border-stone-500">
         <p>
             <?php _e('No posts found.', 'zencontent'); ?>
         </p>

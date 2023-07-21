@@ -5,22 +5,20 @@
             <?php
             $default_logo_id = get_theme_mod('custom_logo');
             $default_logo = wp_get_attachment_image_src($default_logo_id, 'full');
-            if ($default_logo):
-                ?>
+            $dark_mode_logo_id = get_theme_mod('dark_mode_logo');
+            $dark_mode_logo = wp_get_attachment_image_src($dark_mode_logo_id, 'full');
+            ?>
+            <?php if ($default_logo): ?>
                 <img src="<?php echo $default_logo[0]; ?>" alt="<?php bloginfo('name'); ?>"
                     class="inline-block dark:hidden h-[1.5rem] w-auto" />
+                <?php if ($dark_mode_logo): ?>
+                    <img src="<?php echo $dark_mode_logo[0]; ?>" alt="<?php bloginfo('name'); ?>"
+                        class="h-[1.5rem] w-auto hidden dark:inline-block" />
+                <?php endif; ?>
             <?php else: ?>
                 <span class="inline-block text-2xl leading-[1.5rem] font-sans font-bold">
                     <?php bloginfo('name'); ?>
                 </span>
-            <?php endif; ?>
-            <?php
-            $dark_mode_logo_id = get_theme_mod('dark_mode_logo');
-            $dark_mode_logo = wp_get_attachment_image_src($dark_mode_logo_id, 'full');
-            if ($dark_mode_logo):
-                ?>
-                <img src="<?php echo $dark_mode_logo[0]; ?>" alt="<?php bloginfo('name'); ?>"
-                    class="h-[1.5rem] w-auto hidden dark:inline-block" />
             <?php endif; ?>
         </a>
         <?php if (get_theme_mod('show_tagline', false)): ?>
