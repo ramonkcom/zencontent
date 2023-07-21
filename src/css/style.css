@@ -38,38 +38,38 @@
   dt {
     @apply font-normal;
   }
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
+  h1:not(.specific),
+  h2:not(.specific),
+  h3:not(.specific),
+  h4:not(.specific),
+  h5:not(.specific),
+  h6:not(.specific) {
     @apply font-sans font-bold mt-[1em] mb-[0.25em] tracking-tight;
   }
-  h1 a,
-  h2 a,
-  h3 a,
-  h4 a,
-  h5 a,
-  h6 a {
+  h1:not(.specific) a,
+  h2:not(.specific) a,
+  h3:not(.specific) a,
+  h4:not(.specific) a,
+  h5:not(.specific) a,
+  h6:not(.specific) a {
     @apply font-bold border-0;
   }
-  h1 {
+  h1:not(.specific) {
     @apply text-4xl md:text-6xl mt-0;
   }
-  h2 {
+  h2:not(.specific) {
     @apply text-3xl;
   }
-  h3 {
+  h3:not(.specific) {
     @apply text-2xl;
   }
-  h4 {
+  h4:not(.specific) {
     @apply text-xl;
   }
-  h5 {
+  h5:not(.specific) {
     @apply text-lg;
   }
-  h6 {
+  h6:not(.specific) {
     @apply text-base;
   }
   main > blockquote,
@@ -123,11 +123,11 @@
   .main-menu .current-menu-item a {
     @apply border-stone-300 text-stone-800 dark:border-stone-500 dark:text-stone-100;
   }
-  .post-abstract h1,
-  .post h1:not(:first-of-type) {
+  .post-abstract h1:not(.specific),
+  .post h1:not(.specific):not(:first-of-type) {
     @apply bg-red-500 text-white text-base; /* because it shouldn't happen */
   }
-  .post-abstract h2 {
+  .post-abstract h2:not(.specific):not(.specific) {
     @apply md:text-4xl mt-0;
   }
 }
