@@ -1,1 +1,1 @@
-<?php get_template_part('template-parts/post/abstract', 'default'); ?>
+<?php get_template_part('template-parts/post/abstract', 'embed'); ?>
