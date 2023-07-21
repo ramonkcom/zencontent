@@ -1,5 +1,5 @@
 <?php get_header() ?>
-<div class="max-w-[58rem] mx-auto mt-0 py-[6rem] px-[1rem] text-center">
+<div class="max-w-[58rem] wide mx-auto px-4 py-[6rem] mt-0 text-center">
     <?php if (is_home()): ?>
         <h1 class="mb-[.25em]">
             <?php bloginfo('description'); ?>
@@ -58,7 +58,7 @@
             <?php get_template_part('template-parts/post/abstract', $format); ?>
         </article>
     <?php endwhile; ?>
-    <nav class="max-w-[58rem] mx-auto py-[4rem] border-t border-dotted border-stone-400 dark:border-stone-500">
+    <nav class="max-w-[58rem] mx-auto py-[4rem] px-4 border-t border-dotted border-stone-400 dark:border-stone-500">
         <?php get_template_part('template-parts/pagination', '', array('context' => 'loop')); ?>
     </nav>
 <?php else: ?>
