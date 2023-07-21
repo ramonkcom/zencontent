@@ -428,7 +428,7 @@ a {
   transition-duration: 200ms;
 }
 
-article a {
+article main a {
   border-bottom-width: 2px;
   --tw-border-opacity: 1;
   border-color: rgb(168 162 158 / var(--tw-border-opacity));
@@ -436,63 +436,44 @@ article a {
   color: rgb(41 37 36 / var(--tw-text-opacity));
 }
 
-article a:hover {
+article main a:hover {
   --tw-border-opacity: 1;
   border-color: rgb(87 83 78 / var(--tw-border-opacity));
   --tw-text-opacity: 1;
   color: rgb(87 83 78 / var(--tw-text-opacity));
 }
 
-:is(.dark article a) {
+:is(.dark article main a) {
   --tw-border-opacity: 1;
   border-color: rgb(87 83 78 / var(--tw-border-opacity));
   --tw-text-opacity: 1;
   color: rgb(231 229 228 / var(--tw-text-opacity));
 }
 
-:is(.dark article a:hover) {
+:is(.dark article main a:hover) {
   --tw-border-opacity: 1;
   border-color: rgb(168 162 158 / var(--tw-border-opacity));
   --tw-text-opacity: 1;
   color: rgb(168 162 158 / var(--tw-text-opacity));
 }
 
-article ol li,
-  article ul li {
-  border-bottom-width: 1px;
-  border-style: dotted;
-  --tw-border-opacity: 1;
-  border-color: rgb(168 162 158 / var(--tw-border-opacity));
-  padding-top: 0.25rem;
-  padding-bottom: 0.25rem;
+article main > blockquote,
+  article main > div,
+  article main > dl,
+  article main > figure,
+  article main > ol,
+  article main > p,
+  article main > pre,
+  article main > table,
+  article main > ul {
+  margin-top: 1.5rem;
 }
 
-:is(.dark article ol li),:is(.dark 
-  article ul li) {
-  --tw-border-opacity: 1;
-  border-color: rgb(87 83 78 / var(--tw-border-opacity));
-}
-
-article ol li:last-child,
-  article ul li:last-child {
-  border-bottom-width: 0px;
-}
-
-article ol {
-  list-style-position: inside;
-  list-style-type: decimal;
-}
-
-article ul {
-  list-style-position: inside;
-  list-style-type: disc;
-}
-
-blockquote {
+article main blockquote {
   margin-left: 1.75rem;
 }
 
-blockquote::before {
+article main blockquote::before {
   position: absolute;
   margin-left: -2rem;
   margin-top: -0.25em;
@@ -505,13 +486,13 @@ blockquote::before {
   content: var(--tw-content);
 }
 
-:is(.dark blockquote)::before {
+:is(.dark article main blockquote)::before {
   content: var(--tw-content);
   --tw-text-opacity: 1;
   color: rgb(87 83 78 / var(--tw-text-opacity));
 }
 
-blockquote cite {
+article main blockquote cite {
   margin-top: 1em;
   display: block;
   font-family: Libre Franklin, sans-serif;
@@ -521,13 +502,13 @@ blockquote cite {
   font-style: normal;
 }
 
-blockquote cite::before {
+article main blockquote cite::before {
   margin-right: 0.25rem;
   --tw-content: "–";
   content: var(--tw-content);
 }
 
-blockquote p {
+article main blockquote p {
   font-family: PT Serif, serif;
   font-size: 1.25rem;
   line-height: 1.75rem;
@@ -535,10 +516,51 @@ blockquote p {
 }
 
 @media (min-width: 768px) {
-  blockquote p {
+  article main blockquote p {
     font-size: 1.5rem;
     line-height: 2rem;
   }
+}
+
+article main h1 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(239 68 68 / var(--tw-bg-opacity));
+  font-size: 1rem;
+  line-height: 1.5rem;
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+  /* because it shouldn't happen */
+}
+
+article main ol li,
+  article main ul li {
+  border-bottom-width: 1px;
+  border-style: dotted;
+  --tw-border-opacity: 1;
+  border-color: rgb(168 162 158 / var(--tw-border-opacity));
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
+
+:is(.dark article main ol li),:is(.dark 
+  article main ul li) {
+  --tw-border-opacity: 1;
+  border-color: rgb(87 83 78 / var(--tw-border-opacity));
+}
+
+article main ol li:last-child,
+  article main ul li:last-child {
+  border-bottom-width: 0px;
+}
+
+article main ol {
+  list-style-position: inside;
+  list-style-type: decimal;
+}
+
+article main ul {
+  list-style-position: inside;
+  list-style-type: disc;
 }
 
 body {
@@ -620,18 +642,6 @@ h5:not(.specific) {
 h6:not(.specific) {
   font-size: 1rem;
   line-height: 1.5rem;
-}
-
-main > blockquote,
-  main > div,
-  main > dl,
-  main > figure,
-  main > ol,
-  main > p,
-  main > pre,
-  main > table,
-  main > ul {
-  margin-top: 1.5rem;
 }
 
 pre {
@@ -906,17 +916,6 @@ pre {
   color: rgb(245 245 244 / var(--tw-text-opacity));
 }
 
-.post-abstract h1:not(.specific),
-  .post h1:not(.specific):not(:first-of-type) {
-  --tw-bg-opacity: 1;
-  background-color: rgb(239 68 68 / var(--tw-bg-opacity));
-  font-size: 1rem;
-  line-height: 1.5rem;
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
-  /* because it shouldn't happen */
-}
-
 .post-abstract h2:not(.specific):not(.specific) {
   margin-top: 0px;
 }
@@ -985,6 +984,10 @@ pre {
   margin-top: -1px;
 }
 
+.-mt-\[1rem\] {
+  margin-top: -1rem;
+}
+
 .mb-\[\.25em\] {
   margin-bottom: .25em;
 }
@@ -1027,10 +1030,6 @@ pre {
 
 .mt-\[2rem\] {
   margin-top: 2rem;
-}
-
-.-mt-\[1rem\] {
-  margin-top: -1rem;
 }
 
 .block {
@@ -1269,6 +1268,11 @@ pre {
   font-size: 16px;
 }
 
+.text-base {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
 .text-sm {
   font-size: 0.875rem;
   line-height: 1.25rem;
@@ -1282,20 +1286,6 @@ pre {
 .text-xs {
   font-size: 0.75rem;
   line-height: 1rem;
-}
-
-.text-base {
-  font-size: 1rem;
-  line-height: 1.5rem;
-}
-
-.text-lg {
-  font-size: 1.125rem;
-  line-height: 1.75rem;
-}
-
-.text-\[1\.5rem\] {
-  font-size: 1.5rem;
 }
 
 .font-bold {
@@ -1332,10 +1322,6 @@ pre {
 
 .leading-snug {
   line-height: 1.375;
-}
-
-.leading-loose {
-  line-height: 2;
 }
 
 .text-stone-400 {

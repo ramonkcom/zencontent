@@ -45,8 +45,10 @@
 <?php if (have_posts()):
     while (have_posts()):
         the_post();
-        $format = get_post_format() ? get_post_format() : 'standard'; ?>
-        <article id="post-<?php the_ID(); ?>" <?php post_class('relative lg:mx-auto max-w-[58rem] pb-[6rem] post-abstract'); ?>>
+        $format = get_post_format() ? get_post_format() : 'standard';
+        $format_classes = 'post-abstract-' . $format . ' post-' . $format;
+        ?>
+        <article id="post-<?php the_ID(); ?>" <?php post_class('relative lg:mx-auto max-w-[58rem] pb-[6rem] post-abstract ' . $format_classes); ?>>
             <div class="border-t border-dotted border-stone-400 dark:border-stone-500 mb-[2.5rem]">
                 <span
                     class="inline-block -mt-[1px] md:-ml-[3px] md:opacity-75 dark:opacity-100 transition-all duration-200 p-[1rem] rounded rouded-full border border-dotted border-stone-400 text-stone-400 dark:border-stone-500 dark:text-stone-500">

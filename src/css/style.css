@@ -6,31 +6,45 @@
   a {
     @apply transition-all duration-200;
   }
-  article a {
+  article main a {
     @apply border-b-2 text-stone-800 border-stone-400 hover:text-stone-600 hover:border-stone-600 dark:text-stone-200 dark:hover:text-stone-400 dark:border-stone-600 dark:hover:border-stone-400;
   }
-  article ol li,
-  article ul li {
-    @apply border-b border-dotted border-stone-400 dark:border-stone-600 py-1;
+  article main > blockquote,
+  article main > div,
+  article main > dl,
+  article main > figure,
+  article main > ol,
+  article main > p,
+  article main > pre,
+  article main > table,
+  article main > ul {
+    @apply mt-6;
   }
-  article ol li:last-child,
-  article ul li:last-child {
-    @apply border-b-0;
-  }
-  article ol {
-    @apply list-decimal list-inside;
-  }
-  article ul {
-    @apply list-disc list-inside;
-  }
-  blockquote {
+  article main blockquote {
     @apply ml-7 before:content-['“'] before:font-serif before:text-6xl before:absolute before:-ml-8 before:mt-[-0.25em] before:text-stone-400 before:dark:text-stone-600;
   }
-  blockquote cite {
+  article main blockquote cite {
     @apply block mt-[1em] font-bold font-sans not-italic text-sm before:content-["–"] before:mr-1;
   }
-  blockquote p {
+  article main blockquote p {
     @apply font-serif italic text-xl md:text-2xl;
+  }
+  article main h1 {
+    @apply bg-red-500 text-white text-base; /* because it shouldn't happen */
+  }
+  article main ol li,
+  article main ul li {
+    @apply border-b border-dotted border-stone-400 dark:border-stone-600 py-1;
+  }
+  article main ol li:last-child,
+  article main ul li:last-child {
+    @apply border-b-0;
+  }
+  article main ol {
+    @apply list-decimal list-inside;
+  }
+  article main ul {
+    @apply list-disc list-inside;
   }
   body {
     @apply font-serif leading-7 bg-stone-300 text-stone-700 dark:bg-stone-700 dark:text-stone-300;
@@ -72,18 +86,6 @@
   h6:not(.specific) {
     @apply text-base;
   }
-  main > blockquote,
-  main > div,
-  main > dl,
-  main > figure,
-  main > ol,
-  main > p,
-  main > pre,
-  main > table,
-  main > ul {
-    @apply mt-6;
-  }
-
   pre {
     @apply overflow-x-auto font-mono font-normal bg-stone-950 text-stone-50 rounded p-4;
   }
@@ -122,10 +124,6 @@
   }
   .main-menu .current-menu-item a {
     @apply border-stone-300 text-stone-800 dark:border-stone-500 dark:text-stone-100;
-  }
-  .post-abstract h1:not(.specific),
-  .post h1:not(.specific):not(:first-of-type) {
-    @apply bg-red-500 text-white text-base; /* because it shouldn't happen */
   }
   .post-abstract h2:not(.specific):not(.specific) {
     @apply md:text-4xl mt-0;

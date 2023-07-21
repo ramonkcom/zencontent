@@ -3,8 +3,10 @@
 <?php if (have_posts()):
     while (have_posts()):
         the_post();
-        $format = get_post_format() ? get_post_format() : 'standard'; ?>
-        <article id="post-<?php the_ID(); ?>" <?php post_class('py-[4em] post-single'); ?>>
+        $format = get_post_format() ? get_post_format() : 'standard';
+        $format_classes = 'post-single-' . $format . ' post-' . $format;
+        ?>
+        <article id="post-<?php the_ID(); ?>" <?php post_class('py-[4em] post-single ' . $format_classes); ?>>
             <div class="container">
                 <div class="mb-[1.5em]">
                     <?php get_template_part('template-parts/post/meta', 'categories'); ?>
