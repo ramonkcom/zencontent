@@ -592,7 +592,7 @@ h1:not(.specific) {
 
 @media (min-width: 768px) {
   h1:not(.specific) {
-    font-size: 3.75rem;
+    font-size: 3rem;
     line-height: 1;
   }
 }
@@ -1029,10 +1029,6 @@ pre {
   margin-top: 2rem;
 }
 
-.block {
-  display: block;
-}
-
 .inline-block {
   display: inline-block;
 }
@@ -1263,11 +1259,6 @@ pre {
 
 .text-\[16px\] {
   font-size: 16px;
-}
-
-.text-base {
-  font-size: 1rem;
-  line-height: 1.5rem;
 }
 
 .text-sm {

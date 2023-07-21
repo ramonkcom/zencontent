@@ -55,7 +55,7 @@
     @apply font-bold border-0;
   }
   h1:not(.specific) {
-    @apply text-4xl md:text-6xl mt-0;
+    @apply text-4xl md:text-5xl mt-0;
   }
   h2:not(.specific) {
     @apply text-3xl;
