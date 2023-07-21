@@ -1,1 +1,1 @@
-<?php get_template_part('template-parts/post/abstract', 'not-implemented'); ?>
+<?php get_template_part('template-parts/post/abstract', 'default'); ?>

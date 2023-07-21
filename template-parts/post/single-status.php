@@ -1,1 +1,1 @@
-<?php get_template_part('template-parts/post/single', 'not-implemented'); ?>
+<?php get_template_part('template-parts/post/single', 'default'); ?>
