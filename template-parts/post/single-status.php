@@ -1,4 +1,7 @@
-<header>
+<header class="narrow mb-[1em]">
+    <div class="mb-[1.5em]">
+        <?php get_template_part('template-parts/post/meta', 'categories'); ?>
+    </div>
     <h1 class="specific font-sans font-bold text-base">
         <?php
         $title = get_the_title();
@@ -10,6 +13,10 @@
     </h1>
 </header>
 
-<main class="-mt-[1rem] text-2xl leading-snug">
+<main class="container text-2xl leading-snug">
     <?php the_content(); ?>
 </main>
+
+<footer class="narrow mt-[1.5em]">
+    <?php get_template_part('template-parts/post/meta', 'tags'); ?>
+</footer>

@@ -20,6 +20,17 @@
   article main > ul {
     @apply mt-6;
   }
+  article main > blockquote:first-child,
+  article main > div:first-child,
+  article main > dl:first-child,
+  article main > figure:first-child,
+  article main > ol:first-child,
+  article main > p:first-child,
+  article main > pre:first-child,
+  article main > table:first-child,
+  article main > ul:first-child {
+    @apply mt-0;
+  }
   article main blockquote {
     @apply ml-7 before:content-['“'] before:font-serif before:text-6xl before:absolute before:-ml-8 before:mt-[-0.25em] before:text-stone-400 before:dark:text-stone-600;
   }
@@ -98,23 +109,13 @@
   .btn-xs {
     @apply btn px-3 py-1 text-xs;
   }
-  .container {
-    @apply mx-auto px-4 max-w-[48rem];
+  .container > *:not(.wide) {
+    @apply narrow;
   }
-  .container > div,
-  .container > footer,
-  .container > form,
-  .container > header,
-  .container > main > *:not(.wide):not(span) {
-    @apply sm:mx-[3rem];
-  }
-  .container > main > .wide,
-  .container > main > figure.wp-block-image,
-  .container > main > figure.wp-block-gallery,
-  .container > main > .wp-block-embed.wp-has-aspect-ratio,
-  .container > main > .wp-block-embed .wp-block-embed__wrapper div,
-  .container > main > .wp-block-embed .wp-block-embed__wrapper iframe {
-    @apply sm:mx-auto;
+  .container .wp-block-image,
+  .container .wp-block-gallery,
+  .container .wp-block-embed {
+    @apply wide;
   }
   .level-1 {
     @apply bg-stone-200 dark:bg-stone-600;
@@ -125,7 +126,13 @@
   .main-menu .current-menu-item a {
     @apply border-stone-300 text-stone-800 dark:border-stone-500 dark:text-stone-100;
   }
+  .narrow {
+    @apply px-4 mx-[2rem] sm:mx-[6rem];
+  }
   .post-abstract h2:not(.specific):not(.specific) {
     @apply md:text-4xl mt-0;
+  }
+  .wide {
+    @apply px-4 sm:mx-[3rem];
   }
 }

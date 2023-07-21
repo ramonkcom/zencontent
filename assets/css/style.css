@@ -469,6 +469,18 @@ article main > blockquote,
   margin-top: 1.5rem;
 }
 
+article main > blockquote:first-child,
+  article main > div:first-child,
+  article main > dl:first-child,
+  article main > figure:first-child,
+  article main > ol:first-child,
+  article main > p:first-child,
+  article main > pre:first-child,
+  article main > table:first-child,
+  article main > ul:first-child {
+  margin-top: 0px;
+}
+
 article main blockquote {
   margin-left: 1.75rem;
 }
@@ -836,32 +848,33 @@ pre {
   color: rgb(231 229 228 / var(--tw-text-opacity));
 }
 
-.container {
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 48rem;
+.container > *:not(.wide) {
+  margin-left: 2rem;
+  margin-right: 2rem;
   padding-left: 1rem;
   padding-right: 1rem;
 }
 
 @media (min-width: 640px) {
-  .container > div,
-  .container > footer,
-  .container > form,
-  .container > header,
-  .container > main > *:not(.wide):not(span) {
+  .container > *:not(.wide) {
+    margin-left: 6rem;
+    margin-right: 6rem;
+  }
+}
+
+.container .wp-block-image,
+  .container .wp-block-gallery,
+  .container .wp-block-embed {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 640px) {
+  .container .wp-block-image,
+  .container .wp-block-gallery,
+  .container .wp-block-embed {
     margin-left: 3rem;
     margin-right: 3rem;
-  }
-
-  .container > main > .wide,
-  .container > main > figure.wp-block-image,
-  .container > main > figure.wp-block-gallery,
-  .container > main > .wp-block-embed.wp-has-aspect-ratio,
-  .container > main > .wp-block-embed .wp-block-embed__wrapper div,
-  .container > main > .wp-block-embed .wp-block-embed__wrapper iframe {
-    margin-left: auto;
-    margin-right: auto;
   }
 }
 
@@ -916,6 +929,20 @@ pre {
   color: rgb(245 245 244 / var(--tw-text-opacity));
 }
 
+.narrow {
+  margin-left: 2rem;
+  margin-right: 2rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 640px) {
+  .narrow {
+    margin-left: 6rem;
+    margin-right: 6rem;
+  }
+}
+
 .post-abstract h2:not(.specific):not(.specific) {
   margin-top: 0px;
 }
@@ -924,6 +951,18 @@ pre {
   .post-abstract h2:not(.specific):not(.specific) {
     font-size: 2.25rem;
     line-height: 2.5rem;
+  }
+}
+
+.wide {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 640px) {
+  .wide {
+    margin-left: 3rem;
+    margin-right: 3rem;
   }
 }
 
@@ -969,6 +1008,22 @@ pre {
 
 .z-20 {
   z-index: 20;
+}
+
+.order-1 {
+  order: 1;
+}
+
+.order-2 {
+  order: 2;
+}
+
+.order-3 {
+  order: 3;
+}
+
+.order-last {
+  order: 9999;
 }
 
 .mx-auto {
@@ -1030,6 +1085,18 @@ pre {
 
 .mt-\[2rem\] {
   margin-top: 2rem;
+}
+
+.mb-\[1\.5rem\] {
+  margin-bottom: 1.5rem;
+}
+
+.mt-\[1\.5rem\] {
+  margin-top: 1.5rem;
+}
+
+.mb-\[1em\] {
+  margin-bottom: 1em;
 }
 
 .block {

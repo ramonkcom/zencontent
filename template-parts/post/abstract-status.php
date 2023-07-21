@@ -1,4 +1,7 @@
-<header>
+<header class="narrow">
+    <div class="mb-[1rem]">
+        <?php get_template_part('template-parts/post/meta', 'categories'); ?>
+    </div>
     <h2 class="specific font-sans font-bold text-base">
         <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
             <?php
@@ -12,6 +15,10 @@
     </h2>
 </header>
 
-<main class="-mt-[1rem] text-2xl leading-snug">
+<main class="container text-2xl leading-snug">
     <?php the_content(); ?>
 </main>
+
+<footer class="narrow mt-[1rem]">
+    <?php get_template_part('template-parts/post/meta', 'tags'); ?>
+<footer>
