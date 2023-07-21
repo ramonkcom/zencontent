@@ -109,6 +109,30 @@
   .btn-xs {
     @apply btn px-3 py-1 text-xs;
   }
+  .chat,
+  .post.post-chat main ul:first-of-type {
+    @apply list-none rounded-lg bg-stone-400 dark:bg-stone-800 p-[1.5rem] sm:p-[3rem];
+  }
+  .chat li,
+  .post.post-chat main ul:first-of-type li {
+    @apply border-none even:text-right flex flex-col items-start even:items-end;
+  }
+  .chat li span,
+  .post.post-chat main ul:first-of-type li span {
+    @apply font-bold font-sans text-xs order-2 mx-2 mt-1;
+  }
+  .chat li q,
+  .post.post-chat main ul:first-of-type li q {
+    @apply inline-block level-1 rounded-lg p-4 font-normal font-serif italic text-lg order-1 w-10/12 before:hidden after:hidden;
+  }
+  .chat li:nth-child(odd) q,
+  .post.post-chat main ul:first-of-type li:nth-child(odd) q {
+    @apply rounded-bl-none;
+  }
+  .chat li:nth-child(even) q,
+  .post.post-chat main ul:first-of-type li:nth-child(even) q {
+    @apply rounded-br-none;
+  }
   .container > *:not(.wide) {
     @apply narrow;
   }
@@ -129,7 +153,7 @@
   .narrow {
     @apply px-4 mx-[2rem] sm:mx-[6rem];
   }
-  .post-abstract h2:not(.specific):not(.specific) {
+  .post.post-abstract h2:not(.specific):not(.specific) {
     @apply md:text-4xl mt-0;
   }
   .wide {
