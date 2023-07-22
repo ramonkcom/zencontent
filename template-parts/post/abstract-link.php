@@ -35,7 +35,7 @@ if ($thumbnail_id) {
 
     <main class="wide order-1">
         <?php if ($link): ?>
-            <a href="<?php echo $link; ?>" title="<?php echo $matches[2]; ?>" style="background-image:url(<?php echo $image_full_url; ?>)" class="block rounded-lg bg-center text-stone-100 dark:text-stone-100 hover:text-white dark:hover:text-white border-none">
+            <a href="<?php echo $link; ?>" target="_blank" title="<?php echo $matches[2]; ?>" style="background-image:url(<?php echo $image_full_url; ?>)" class="block rounded-lg bg-center text-stone-200 dark:text-stone-200 hover:text-white dark:hover:text-white border-none">
                 <div class="flex flex-col justify-center rounded-lg px-[3rem] w-full h-[10rem] bg-gradient-to-tr from-stone-950 to-transparent">
                     <div class="font-sans font-bold text-2xl"><?php echo $matches[2]; ?></div>
                     <p class="leading-tight"><?php echo wp_strip_all_tags(get_the_excerpt()); ?></p>
