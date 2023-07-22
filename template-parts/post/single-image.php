@@ -11,7 +11,7 @@
     <main class="wide order-1">
         <?php
             if (has_post_thumbnail()) {
-                the_post_thumbnail($size = 'post-thumbnail', array('class' => 'w-full'));
+                the_post_thumbnail($size = 'post-thumbnail', array('class' => 'w-full rounded-lg overflow-hidden'));
             }
         ?>
     </main>
