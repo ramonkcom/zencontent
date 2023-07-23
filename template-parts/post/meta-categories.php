@@ -5,7 +5,7 @@
     </a>
     <?php if ($categories = get_the_category()): ?>
         <span>&nbsp;</span>
-        <?php _e('in', 'zencontent'); ?>
+        <?php _e('in', 'zenc'); ?>
         <span>&nbsp;</span>
         <ul class="inline-flex space-x-2 list-none mt-0">
             <?php foreach ($categories as $category): ?>

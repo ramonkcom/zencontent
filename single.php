@@ -16,7 +16,7 @@
     <?php endwhile; ?>
 <?php else: ?>
     <div class="max-w-[58rem] py-[4em] mx-auto">
-        <p><?php _e('Post not found.', 'zencontent'); ?></p>
+        <p><?php _e('Post not found.', 'zenc'); ?></p>
     </div>
 <?php endif; ?>
 

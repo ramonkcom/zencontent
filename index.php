@@ -63,7 +63,7 @@
     </nav>
 <?php else: ?>
     <div class="max-w-[58rem] container py-[3rem] border-t border-dotted border-stone-400 dark:border-stone-500">
-        <p><?php _e('No posts found.', 'zencontent'); ?></p>
+        <p><?php _e('No posts found.', 'zenc'); ?></p>
     </div>
 <?php endif; ?>
 <?php get_footer() ?>
