@@ -499,11 +499,13 @@ article aside > blockquote:first-child,
   margin-top: 0px;
 }
 
-article main blockquote {
+article aside blockquote,
+  article main blockquote {
   margin-left: 1.75rem;
 }
 
-article main blockquote::before {
+article aside blockquote::before,
+  article main blockquote::before {
   position: absolute;
   margin-left: -2rem;
   margin-top: -0.25em;
@@ -516,13 +518,15 @@ article main blockquote::before {
   content: var(--tw-content);
 }
 
-:is(.dark article main blockquote)::before {
+:is(.dark article aside blockquote)::before,:is(.dark 
+  article main blockquote)::before {
   content: var(--tw-content);
   --tw-text-opacity: 1;
   color: rgb(87 83 78 / var(--tw-text-opacity));
 }
 
-article main blockquote cite {
+article aside blockquote cite,
+  article main blockquote cite {
   margin-top: 1em;
   display: block;
   font-family: Libre Franklin, sans-serif;
@@ -532,13 +536,15 @@ article main blockquote cite {
   font-style: normal;
 }
 
-article main blockquote cite::before {
+article aside blockquote cite::before,
+  article main blockquote cite::before {
   margin-right: 0.25rem;
   --tw-content: "–";
   content: var(--tw-content);
 }
 
-article main blockquote p {
+article aside blockquote p,
+  article main blockquote p {
   font-family: PT Serif, serif;
   font-size: 1.25rem;
   line-height: 1.75rem;
@@ -546,6 +552,7 @@ article main blockquote p {
 }
 
 @media (min-width: 768px) {
+  article aside blockquote p,
   article main blockquote p {
     font-size: 1.5rem;
     line-height: 2rem;
@@ -1080,6 +1087,73 @@ pre {
   }
 }
 
+.post.post-quote main blockquote {
+  padding-left: 1.5rem;
+}
+
+.post.post-quote main blockquote::before {
+  position: absolute;
+  margin-left: -3rem;
+  margin-top: -0.15em;
+  font-family: PT Serif, serif;
+  font-size: 6rem;
+  line-height: 1;
+  --tw-text-opacity: 1;
+  color: rgb(168 162 158 / var(--tw-text-opacity));
+  --tw-content: '“';
+  content: var(--tw-content);
+}
+
+:is(.dark .post.post-quote main blockquote)::before {
+  content: var(--tw-content);
+  --tw-text-opacity: 1;
+  color: rgb(87 83 78 / var(--tw-text-opacity));
+}
+
+.post.post-quote main blockquote cite {
+  margin-top: 1em;
+  display: block;
+  font-family: Libre Franklin, sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.post.post-quote main blockquote cite::before {
+  margin-right: 0.25rem;
+  --tw-content: "–";
+  content: var(--tw-content);
+}
+
+.post.post-quote main blockquote p {
+  font-family: PT Serif, serif;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-style: italic;
+  line-height: 1.375;
+}
+
+@media (min-width: 768px) {
+  .post.post-quote main blockquote p {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+    line-height: 1.375;
+  }
+}
+
+.post.post-quote.post-single main blockquote p {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+@media (min-width: 768px) {
+  .post.post-quote.post-single main blockquote p {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
+}
+
 .sr-only {
   position: absolute;
   width: 1px;
@@ -1540,9 +1614,9 @@ pre {
   line-height: 1.25;
 }
 
-.text-stone-100 {
+.text-stone-200 {
   --tw-text-opacity: 1;
-  color: rgb(245 245 244 / var(--tw-text-opacity));
+  color: rgb(231 229 228 / var(--tw-text-opacity));
 }
 
 .text-stone-400 {
@@ -1563,16 +1637,6 @@ pre {
 .text-stone-700 {
   --tw-text-opacity: 1;
   color: rgb(68 64 60 / var(--tw-text-opacity));
-}
-
-.text-stone-300 {
-  --tw-text-opacity: 1;
-  color: rgb(214 211 209 / var(--tw-text-opacity));
-}
-
-.text-stone-200 {
-  --tw-text-opacity: 1;
-  color: rgb(231 229 228 / var(--tw-text-opacity));
 }
 
 .opacity-0 {
@@ -1654,9 +1718,9 @@ pre {
   background-color: rgb(68 64 60 / 0.9);
 }
 
-:is(.dark .dark\:text-stone-100) {
+:is(.dark .dark\:text-stone-200) {
   --tw-text-opacity: 1;
-  color: rgb(245 245 244 / var(--tw-text-opacity));
+  color: rgb(231 229 228 / var(--tw-text-opacity));
 }
 
 :is(.dark .dark\:text-stone-300) {
@@ -1672,11 +1736,6 @@ pre {
 :is(.dark .dark\:text-stone-500) {
   --tw-text-opacity: 1;
   color: rgb(120 113 108 / var(--tw-text-opacity));
-}
-
-:is(.dark .dark\:text-stone-200) {
-  --tw-text-opacity: 1;
-  color: rgb(231 229 228 / var(--tw-text-opacity));
 }
 
 :is(.dark .dark\:opacity-100) {

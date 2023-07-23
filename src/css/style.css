@@ -49,12 +49,15 @@
   article main > ul:first-child {
     @apply mt-0;
   }
+  article aside blockquote,
   article main blockquote {
     @apply ml-7 before:content-['“'] before:font-serif before:text-6xl before:absolute before:-ml-8 before:mt-[-0.25em] before:text-stone-400 before:dark:text-stone-600;
   }
+  article aside blockquote cite,
   article main blockquote cite {
     @apply block mt-[1em] font-bold font-sans not-italic text-sm before:content-["–"] before:mr-1;
   }
+  article aside blockquote p,
   article main blockquote p {
     @apply font-serif italic text-xl md:text-2xl;
   }
@@ -176,5 +179,18 @@
   }
   .wide {
     @apply px-4 sm:mx-[3rem];
+  }
+
+  .post.post-quote main blockquote {
+    @apply pl-6 before:content-['“'] before:font-serif before:text-8xl before:absolute before:-ml-12 before:mt-[-0.15em] before:text-stone-400 before:dark:text-stone-600;
+  }
+  .post.post-quote main blockquote cite {
+    @apply block mt-[1em] font-bold font-sans not-italic text-sm before:content-["–"] before:mr-1;
+  }
+  .post.post-quote main blockquote p {
+    @apply font-serif italic leading-snug md:leading-snug text-xl md:text-3xl;
+  }
+  .post.post-quote.post-single main blockquote p {
+    @apply text-2xl md:text-4xl;
   }
 }
