@@ -1,1 +1,1 @@
-<?php get_template_part('template-parts/post/single', 'not-implemented'); ?>
+<?php get_template_part('template-parts/post/single', 'media', array('block_pattern' => '/<!--\s*wp:gallery\b(.*?)\s*-->.*?<!--\s*\/wp:gallery\s*-->/s')); ?>

@@ -6,31 +6,77 @@
   a {
     @apply transition-all duration-200;
   }
-  article a {
+  article main a {
     @apply border-b-2 text-stone-800 border-stone-400 hover:text-stone-600 hover:border-stone-600 dark:text-stone-200 dark:hover:text-stone-400 dark:border-stone-600 dark:hover:border-stone-400;
   }
-  article ol li,
-  article ul li {
-    @apply border-b border-dotted border-stone-400 dark:border-stone-600 py-1;
+  article aside > blockquote,
+  article aside > div,
+  article aside > dl,
+  article aside > figure,
+  article aside > ol,
+  article aside > p,
+  article aside > pre,
+  article aside > table,
+  article aside > ul,
+  article main > blockquote,
+  article main > div,
+  article main > dl,
+  article main > figure,
+  article main > ol,
+  article main > p,
+  article main > pre,
+  article main > table,
+  article main > ul {
+    @apply mt-6;
   }
-  article ol li:last-child,
-  article ul li:last-child {
-    @apply border-b-0;
+  article aside > blockquote:first-child,
+  article aside > div:first-child,
+  article aside > dl:first-child,
+  article aside > figure:first-child,
+  article aside > ol:first-child,
+  article aside > p:first-child,
+  article aside > pre:first-child,
+  article aside > table:first-child,
+  article aside > ul:first-child,
+  article main > blockquote:first-child,
+  article main > div:first-child,
+  article main > dl:first-child,
+  article main > figure:first-child,
+  article main > ol:first-child,
+  article main > p:first-child,
+  article main > pre:first-child,
+  article main > table:first-child,
+  article main > ul:first-child {
+    @apply mt-0;
   }
-  article ol {
-    @apply list-decimal list-inside;
-  }
-  article ul {
-    @apply list-disc list-inside;
-  }
-  blockquote {
+  article aside blockquote,
+  article main blockquote {
     @apply ml-7 before:content-['“'] before:font-serif before:text-6xl before:absolute before:-ml-8 before:mt-[-0.25em] before:text-stone-400 before:dark:text-stone-600;
   }
-  blockquote cite {
+  article aside blockquote cite,
+  article main blockquote cite {
     @apply block mt-[1em] font-bold font-sans not-italic text-sm before:content-["–"] before:mr-1;
   }
-  blockquote p {
+  article aside blockquote p,
+  article main blockquote p {
     @apply font-serif italic text-xl md:text-2xl;
+  }
+  article main h1 {
+    @apply bg-red-500 text-white text-base; /* because it shouldn't happen */
+  }
+  article main ol li,
+  article main ul li {
+    @apply border-b border-dotted border-stone-400 dark:border-stone-600 py-1;
+  }
+  article main ol li:last-child,
+  article main ul li:last-child {
+    @apply border-b-0;
+  }
+  article main ol {
+    @apply list-decimal list-inside;
+  }
+  article main ul {
+    @apply list-disc list-inside;
   }
   body {
     @apply font-serif leading-7 bg-stone-300 text-stone-700 dark:bg-stone-700 dark:text-stone-300;
@@ -38,52 +84,40 @@
   dt {
     @apply font-normal;
   }
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
+  h1:not(.specific),
+  h2:not(.specific),
+  h3:not(.specific),
+  h4:not(.specific),
+  h5:not(.specific),
+  h6:not(.specific) {
     @apply font-sans font-bold mt-[1em] mb-[0.25em] tracking-tight;
   }
-  h1 a,
-  h2 a,
-  h3 a,
-  h4 a,
-  h5 a,
-  h6 a {
+  h1:not(.specific) a,
+  h2:not(.specific) a,
+  h3:not(.specific) a,
+  h4:not(.specific) a,
+  h5:not(.specific) a,
+  h6:not(.specific) a {
     @apply font-bold border-0;
   }
-  h1 {
-    @apply text-4xl md:text-6xl mt-0;
+  h1:not(.specific) {
+    @apply text-4xl md:text-5xl mt-0;
   }
-  h2 {
+  h2:not(.specific) {
     @apply text-3xl;
   }
-  h3 {
+  h3:not(.specific) {
     @apply text-2xl;
   }
-  h4 {
+  h4:not(.specific) {
     @apply text-xl;
   }
-  h5 {
+  h5:not(.specific) {
     @apply text-lg;
   }
-  h6 {
+  h6:not(.specific) {
     @apply text-base;
   }
-  main > blockquote,
-  main > div,
-  main > dl,
-  main > figure,
-  main > ol,
-  main > p,
-  main > pre,
-  main > table,
-  main > ul {
-    @apply mt-6;
-  }
-
   pre {
     @apply overflow-x-auto font-mono font-normal bg-stone-950 text-stone-50 rounded p-4;
   }
@@ -96,23 +130,37 @@
   .btn-xs {
     @apply btn px-3 py-1 text-xs;
   }
-  .container {
-    @apply mx-auto px-4 max-w-[48rem];
+  .chat,
+  .post.post-chat main ul:first-of-type {
+    @apply list-none rounded-lg bg-stone-400 dark:bg-stone-800 p-[1.5rem] sm:p-[3rem];
   }
-  .container > div,
-  .container > footer,
-  .container > form,
-  .container > header,
-  .container > main > *:not(.wide):not(span) {
-    @apply sm:mx-[3rem];
+  .chat li,
+  .post.post-chat main ul:first-of-type li {
+    @apply border-none even:text-right flex flex-col items-start even:items-end;
   }
-  .container > main > .wide,
-  .container > main > figure.wp-block-image,
-  .container > main > figure.wp-block-gallery,
-  .container > main > .wp-block-embed.wp-has-aspect-ratio,
-  .container > main > .wp-block-embed .wp-block-embed__wrapper div,
-  .container > main > .wp-block-embed .wp-block-embed__wrapper iframe {
-    @apply sm:mx-auto;
+  .chat li span,
+  .post.post-chat main ul:first-of-type li span {
+    @apply font-bold font-sans text-xs order-2 mx-2 mt-1;
+  }
+  .chat li q,
+  .post.post-chat main ul:first-of-type li q {
+    @apply inline-block level-1 rounded-lg p-4 font-normal font-serif italic text-lg order-1 w-10/12 before:hidden after:hidden;
+  }
+  .chat li:nth-child(odd) q,
+  .post.post-chat main ul:first-of-type li:nth-child(odd) q {
+    @apply rounded-bl-none;
+  }
+  .chat li:nth-child(even) q,
+  .post.post-chat main ul:first-of-type li:nth-child(even) q {
+    @apply rounded-br-none;
+  }
+  .container > *:not(.wide) {
+    @apply narrow;
+  }
+  .container .wp-block-image,
+  .container .wp-block-gallery,
+  .container .wp-block-embed {
+    @apply wide;
   }
   .level-1 {
     @apply bg-stone-200 dark:bg-stone-600;
@@ -123,11 +171,26 @@
   .main-menu .current-menu-item a {
     @apply border-stone-300 text-stone-800 dark:border-stone-500 dark:text-stone-100;
   }
-  .post-abstract h1,
-  .post h1:not(:first-of-type) {
-    @apply bg-red-500 text-white text-base; /* because it shouldn't happen */
+  .narrow {
+    @apply px-4 mx-[2rem] sm:mx-[6rem];
   }
-  .post-abstract h2 {
+  .post.post-abstract h2:not(.specific):not(.specific) {
     @apply md:text-4xl mt-0;
+  }
+  .wide {
+    @apply px-4 sm:mx-[3rem];
+  }
+
+  .post.post-quote main blockquote {
+    @apply pl-6 before:content-['“'] before:font-serif before:text-8xl before:absolute before:-ml-12 before:mt-[-0.15em] before:text-stone-400 before:dark:text-stone-600;
+  }
+  .post.post-quote main blockquote cite {
+    @apply block mt-[1em] font-bold font-sans not-italic text-sm before:content-["–"] before:mr-1;
+  }
+  .post.post-quote main blockquote p {
+    @apply font-serif italic leading-snug md:leading-snug text-xl md:text-3xl;
+  }
+  .post.post-quote.post-single main blockquote p {
+    @apply text-2xl md:text-4xl;
   }
 }

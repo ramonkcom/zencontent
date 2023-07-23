@@ -1,3 +1,10 @@
+<?php
+$post_content = get_the_content();
+preg_match($args['block_pattern'], $post_content, $matches);
+$post_content = preg_replace($args['block_pattern'], '', $post_content);
+$block = empty($matches) ? null : $matches[0];
+?>
+
 <div class="flex flex-col">
     <header class="narrow mt-[1.5em] order-2">
         <div class="mb-[1.5rem]">
@@ -9,15 +16,13 @@
     </header>
 
     <main class="wide order-1">
-        <?php
-            if (has_post_thumbnail()) {
-                the_post_thumbnail($size = 'post-thumbnail', array('class' => 'w-full rounded-lg overflow-hidden'));
-            }
-        ?>
+        <?php if ($block): ?>
+            <?php echo apply_filters('the_content', $block); ?>
+        <?php endif; ?>
     </main>
 
     <aside class="container order-3">
-        <?php the_content(); ?>
+        <?php echo $post_content; ?>
     </aside>
 
     <footer class="narrow mt-[1.5rem] order-last">
