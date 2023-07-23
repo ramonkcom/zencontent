@@ -15,7 +15,7 @@
     </h2>
 </header>
 
-<main class="container my-[1rem] text-2xl leading-snug">
+<main class="container my-[1rem] text-xl sm:text-2xl leading-snug">
     <?php the_content(); ?>
 </main>
 

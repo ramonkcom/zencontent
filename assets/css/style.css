@@ -1752,6 +1752,22 @@ pre {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
+@media (min-width: 640px) {
+  .sm\:text-2xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+
+  .sm\:text-3xl {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
+
+  .sm\:leading-relaxed {
+    line-height: 1.625;
+  }
+}
+
 @media (min-width: 768px) {
   .md\:-ml-\[3px\] {
     margin-left: -3px;

@@ -13,7 +13,7 @@
     </h1>
 </header>
 
-<main class="container mt-[1rem] text-2xl leading-snug">
+<main class="container mt-[1rem] text-2xl sm:text-3xl">
     <?php the_content(); ?>
 </main>
 
