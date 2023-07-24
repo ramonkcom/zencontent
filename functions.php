@@ -10,8 +10,8 @@ function zenc_setup()
         'custom-logo',
         array(
             'height' => 30,
-            'flex_height' => true,
-            'flex_width' => true,
+            'flex-height' => true,
+            'flex-width' => true,
         )
     );
 
