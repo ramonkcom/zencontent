@@ -1,16 +1,16 @@
 <header class="narrow">
-    <div class="mb-[1rem]">
+    <div class="mb-[1.5em]">
         <?php get_template_part('template-parts/post/meta', 'categories'); ?>
     </div>
-    <h1 class="specific font-sans font-bold text-base text-stone-500 dark:text-stone-500 hidden">
+    <h1>
         <?php the_title(); ?>
     </h1>
 </header>
 
-<main class="container my-[1rem]">
+<main class="container">
     <?php the_content(); ?>
 </main>
 
-<footer class="narrow mt-[1rem]">
+<footer class="narrow mt-[1.5em]">
     <?php get_template_part('template-parts/post/meta', 'tags'); ?>
-<footer>
+</footer>

@@ -1,5 +1,1 @@
-<h1 class="text-6xl font-medium">
-    <?php the_title(); ?>
-</h1>
-
-<?php the_content(); ?>
+<?php get_template_part('template-parts/post/single', 'media', array('block_pattern' => '/<!--\s*wp:gallery\b(.*?)\s*-->.*?<!--\s*\/wp:gallery\s*-->/s')); ?>

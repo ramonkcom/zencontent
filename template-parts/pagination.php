@@ -1,11 +1,11 @@
 <?php if ($args['context'] === 'loop'): ?>
 
-    <div class="flex justify-between font-mono font-normal">
+    <div class="flex justify-between">
         <div>
             <?php
             if (get_previous_posts_link()):
                 $previous_url = esc_url(get_previous_posts_page_link());
-                $previous_label = __('← Newer posts', 'zencontent');
+                $previous_label = __('← Newer posts', 'zenc');
                 ?>
                 <a href="<?php echo $previous_url; ?>" title="<?php $previous_label; ?>" class="btn">
                     <?php echo $previous_label; ?>
@@ -16,7 +16,7 @@
             <?php
             if (get_next_posts_link()):
                 $next_url = esc_url(get_next_posts_page_link());
-                $next_label = __('Older posts →', 'zencontent');
+                $next_label = __('Older posts →', 'zenc');
                 ?>
                 <a href="<?php echo $next_url; ?>" title="<?php $next_label; ?>" class="btn">
                     <?php echo $next_label; ?>
@@ -30,9 +30,9 @@
     <?php
     if (wp_link_pages(array('echo' => 0))) {
         $args = array(
-            'before' => '<div class="post-nav-links">' . __('Parts:', 'zencontent'),
-            'after' => '</div>',
-            'separator' => '<span class="post-nav-links__separator"></span>',
+            'before' => '<nav class="font-sans flex space-x-1 mt-4"><span class="font-normal">' . __('Parts:', 'zenc') . '</span>',
+            'after' => '</nav>',
+            'pagelink' => '%',
             'nextpagelink' => __('Next part'),
             'previouspagelink' => __('Previous part'),
         );
@@ -51,7 +51,7 @@
         return $previous ? '← ' . $label : $label . ' →';
     }
     ?>
-    <div class="flex justify-between font-mono font-normal">
+    <div class="flex justify-between">
         <div>
             <?php
             if ($previous_post = get_adjacent_post(false, '', false)):
