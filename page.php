@@ -9,13 +9,13 @@
                 the_post_thumbnail($size = 'post-thumbnail', array('class' => 'w-full'));
             }
             ?>
-            <div class="container py-[4rem]">
-                <header>
+            <div class="py-[6rem] max-w-[58rem] mx-auto">
+                <header class="narrow">
                     <h1>
                         <?php the_title(); ?>
                     </h1>
                 </header>
-                <main>
+                <main class="container">
                     <?php the_content(); ?>
                 </main>
             </div><!-- .container -->
