@@ -118,6 +118,9 @@
   h6:not(.specific) {
     @apply text-base;
   }
+  input[type="search"] {
+    -webkit-appearance: none;
+  }
   pre {
     @apply overflow-x-auto font-mono font-normal bg-stone-950 text-stone-50 rounded p-4;
   }

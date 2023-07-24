@@ -5,7 +5,7 @@
             <?php _e('Search:', 'zencontent'); ?>
         </span>
         <input type="search"
-            class="font-sans text-sm font-normal rounded-t md:rounded-l md:rounded-r-none py-2 px-2 w-full shadow-inner border border-b-0 md:border-b md:border-r-0 border-stone-400  dark:border-stone-500 bg-stone-200 dark:bg-stone-600 text-stone-700 dark:text-stone-300"
+            class="font-sans text-sm font-normal rounded-none rounded-t md:rounded-l md:rounded-r-none py-2 px-2 w-full shadow-inner border border-b-0 md:border-b md:border-r-0 border-stone-400  dark:border-stone-500 bg-stone-200 dark:bg-stone-600 text-stone-700 dark:text-stone-300"
             placeholder="<?php _e('Type your search term...', 'zencontent'); ?>"
             value="<?php echo get_search_query(); ?>" name="s" />
     </label>
