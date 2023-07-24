@@ -4,25 +4,28 @@ function zenc_setup()
 {
     add_theme_support('title-tag');
 
-    add_theme_support('responsive-embeds');
+    add_theme_support( 'automatic-feed-links');
+
+    load_theme_textdomain('zencontent', get_template_directory() . '/languages');
+
+    add_theme_support('post-thumbnails');
 
     add_theme_support(
         'custom-logo',
         array(
-            'height' => 30,
-            'flex-height' => true,
-            'flex-width' => true,
+        'height' => 30,
+        'flex-height' => true,
+        'flex-width' => true,
         )
     );
-
-    add_theme_support('post-thumbnails');
+    
+    
+    add_theme_support('responsive-embeds');
 
     $supported_formats = array('audio', 'chat', 'gallery', 'image', 'link', 'quote', 'status', 'video');
     add_theme_support('post-formats', $supported_formats);
 
     register_nav_menu('main_menu', __('Main Menu', 'zencontent'));
-
-    load_theme_textdomain('zencontent', get_template_directory() . '/languages');
 }
 add_action('after_setup_theme', 'zenc_setup');
 
