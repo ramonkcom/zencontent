@@ -15,7 +15,7 @@
             <?php echo '"' . $search_query . '"'; ?>
         </h1>
         <p class="text-xl md:text-2xl">
-            <?php echo __('Below, all the results found for the search term', 'zenc') . ' "' . $search_query . '".' ?>
+            <?php echo __('Below, all the results found for the search term', 'zencontent') . ' "' . $search_query . '".' ?>
         </p>
     <?php elseif (is_category()): ?>
         <h1 class="mb-[.25em]">
@@ -63,7 +63,7 @@
     </nav>
 <?php else: ?>
     <div class="max-w-[58rem] container py-[3rem] border-t border-dotted border-stone-400 dark:border-stone-500">
-        <p><?php _e('No posts found.', 'zenc'); ?></p>
+        <p><?php _e('No posts found.', 'zencontent'); ?></p>
     </div>
 <?php endif; ?>
 <?php get_footer() ?>

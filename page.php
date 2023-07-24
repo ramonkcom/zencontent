@@ -24,7 +24,7 @@
 <?php else: ?>
     <div class="container">
         <p>
-            <?php _e('Page not found.', 'zenc'); ?>
+            <?php _e('Page not found.', 'zencontent'); ?>
         </p>
     </div><!-- .container -->
 <?php endif; ?>

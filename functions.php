@@ -20,9 +20,9 @@ function zenc_setup()
     $supported_formats = array('audio', 'chat', 'gallery', 'image', 'link', 'quote', 'status', 'video');
     add_theme_support('post-formats', $supported_formats);
 
-    register_nav_menu('main_menu', __('Main Menu', 'zenc'));
+    register_nav_menu('main_menu', __('Main Menu', 'zencontent'));
 
-    load_theme_textdomain('zenc', get_template_directory() . '/languages');
+    load_theme_textdomain('zencontent', get_template_directory() . '/languages');
 }
 add_action('after_setup_theme', 'zenc_setup');
 
@@ -43,7 +43,7 @@ add_action('wp_enqueue_scripts', 'zenc_assets');
 
 function zenc_script_tag($tag, $handle, $src)
 {
-    if (!str_contains($handle, 'zenc') || str_contains($handle, 'nodefer')) {
+    if (!str_contains($handle, 'zencontent') || str_contains($handle, 'nodefer')) {
         return $tag;
     }
 
@@ -57,15 +57,15 @@ function zenc_document_title($title)
     if (is_home() || is_front_page()) {
         return get_bloginfo('name') . ' | ' . get_bloginfo('description');
     } elseif (is_search()) {
-        $title = __('Search results for', 'zenc') . ' "' . get_search_query() . '"';
+        $title = __('Search results for', 'zencontent') . ' "' . get_search_query() . '"';
     } elseif (is_category()) {
-        $title = __('Post on category', 'zenc') . ' "' . single_cat_title('', false) . '"';
+        $title = __('Post on category', 'zencontent') . ' "' . single_cat_title('', false) . '"';
     } elseif (is_tag()) {
-        $title = __('Posts tagged', 'zenc') . ' "' . single_tag_title('', false) . '"';
+        $title = __('Posts tagged', 'zencontent') . ' "' . single_tag_title('', false) . '"';
     } elseif (is_singular('post')) {
         $title = get_the_title();
         if (get_query_var('page')) {
-            $title .= ' - ' . __('Part', 'zenc') . ' ' . get_query_var('page');
+            $title .= ' - ' . __('Part', 'zencontent') . ' ' . get_query_var('page');
         }
     }
     if ($title) {
@@ -77,7 +77,7 @@ add_filter('pre_get_document_title', 'zenc_document_title');
 
 function zenc_read_more_link()
 {
-    return '<p><a href="' . get_permalink() . '" title="' . get_the_title() . '" class="italic">(' . __('Read more', 'zenc') . ' ...)</a></p>';
+    return '<p><a href="' . get_permalink() . '" title="' . get_the_title() . '" class="italic">(' . __('Read more', 'zencontent') . ' ...)</a></p>';
 }
 add_filter('the_content_more_link', 'zenc_read_more_link');
 
@@ -117,7 +117,7 @@ function zenc_customizer($wp_customize)
                 $wp_customize,
                 'dark_mode_logo',
                 array(
-                    'label' => __('Logo (dark mode)', 'zenc'),
+                    'label' => __('Logo (dark mode)', 'zencontent'),
                     'section' => 'title_tagline',
                     'settings' => 'dark_mode_logo',
                     'priority' => 8,
@@ -139,7 +139,7 @@ function zenc_customizer($wp_customize)
         $wp_customize->add_control(
             'show_tagline',
             array(
-                'label' => __('Show tagline?', 'zenc'),
+                'label' => __('Show tagline?', 'zencontent'),
                 'section' => 'title_tagline',
                 'type' => 'checkbox',
                 'priority' => 10,
@@ -149,7 +149,7 @@ function zenc_customizer($wp_customize)
         $wp_customize->add_setting(
             'blog_long_description',
             array(
-                'default' => __('This is a zen place for content curation and self expression.', 'zenc'),
+                'default' => __('This is a zen place for content curation and self expression.', 'zencontent'),
                 'sanitize_callback' => 'wp_kses_post',
             )
         );
@@ -159,7 +159,7 @@ function zenc_customizer($wp_customize)
                 $wp_customize,
                 'blog_long_description',
                 array(
-                    'label' => __('Long description', 'zenc'),
+                    'label' => __('Long description', 'zencontent'),
                     'section' => 'title_tagline',
                     'settings' => 'blog_long_description',
                 )
@@ -169,7 +169,7 @@ function zenc_customizer($wp_customize)
         $wp_customize->add_setting(
             'footer_line',
             array(
-                'default' => __('This is a zen place for content curation and self expression.', 'zenc'),
+                'default' => __('This is a zen place for content curation and self expression.', 'zencontent'),
                 'sanitize_callback' => 'sanitize_text_field',
             )
         );
@@ -177,7 +177,7 @@ function zenc_customizer($wp_customize)
         $wp_customize->add_control(
             'footer_line',
             array(
-                'label' => __('Footer text', 'zenc'),
+                'label' => __('Footer text', 'zencontent'),
                 'section' => 'title_tagline',
                 'type' => 'text',
                 'priority' => 15,

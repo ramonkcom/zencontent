@@ -5,7 +5,7 @@
             <?php
             if (get_previous_posts_link()):
                 $previous_url = esc_url(get_previous_posts_page_link());
-                $previous_label = __('← Newer posts', 'zenc');
+                $previous_label = __('← Newer posts', 'zencontent');
                 ?>
                 <a href="<?php echo $previous_url; ?>" title="<?php $previous_label; ?>" class="btn">
                     <?php echo $previous_label; ?>
@@ -16,7 +16,7 @@
             <?php
             if (get_next_posts_link()):
                 $next_url = esc_url(get_next_posts_page_link());
-                $next_label = __('Older posts →', 'zenc');
+                $next_label = __('Older posts →', 'zencontent');
                 ?>
                 <a href="<?php echo $next_url; ?>" title="<?php $next_label; ?>" class="btn">
                     <?php echo $next_label; ?>
@@ -30,7 +30,7 @@
     <?php
     if (wp_link_pages(array('echo' => 0))) {
         $args = array(
-            'before' => '<nav class="font-sans flex space-x-1 mt-4"><span class="font-normal">' . __('Parts:', 'zenc') . '</span>',
+            'before' => '<nav class="font-sans flex space-x-1 mt-4"><span class="font-normal">' . __('Parts:', 'zencontent') . '</span>',
             'after' => '</nav>',
             'pagelink' => '%',
             'nextpagelink' => __('Next part'),

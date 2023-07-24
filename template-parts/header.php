@@ -41,7 +41,7 @@
         ?>
         <button
             class="js-theme-switcher btn p-[.625rem] mr-2 md:mr-0 md:ml-4 md:text-stone-500 md:hover:text-stone-800 md:dark:text-stone-400 md:dark:hover:text-stone-100"
-            title="<?php _e('Toggle theme', 'zenc'); ?>" aria-label="<?php _e('Toggle theme', 'zenc'); ?>">
+            title="<?php _e('Toggle theme', 'zencontent'); ?>" aria-label="<?php _e('Toggle theme', 'zencontent'); ?>">
             <span class="dark:hidden">
                 <svg xmlns="http://www.w3.org/2000/svg" width=".75rem" height=".75rem" fill="currentColor"
                     viewBox="0 0 16 16">

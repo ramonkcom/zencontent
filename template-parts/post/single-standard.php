@@ -4,7 +4,7 @@ $title = get_the_title();
 if (wp_link_pages(array('echo' => 0))) {
     $page = get_query_var('page');
     $page = $page > 0 ? $page : 1;
-    $title .= ' - <span class="post-title-part">' . __('part', 'zenc') . ' ' . $page . '</span>';
+    $title .= ' - <span class="post-title-part">' . __('part', 'zencontent') . ' ' . $page . '</span>';
 }
 ?>
 
