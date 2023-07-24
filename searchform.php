@@ -2,7 +2,7 @@
     action="<?php echo esc_url(home_url('/')); ?>">
     <label class="grow">
         <span class="sr-only">
-            <?php _e('Pesquisar:', 'zenc'); ?>
+            <?php _e('Search:', 'zenc'); ?>
         </span>
         <input type="search"
             class="font-sans text-sm font-normal rounded-t md:rounded-l md:rounded-r-none py-2 px-2 w-full shadow-inner border border-b-0 md:border-b md:border-r-0 border-stone-400  dark:border-stone-500 bg-stone-200 dark:bg-stone-600 text-stone-700 dark:text-stone-300"

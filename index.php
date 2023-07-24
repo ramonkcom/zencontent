@@ -15,7 +15,7 @@
             <?php echo '"' . $search_query . '"'; ?>
         </h1>
         <p class="text-xl md:text-2xl">
-            <?php echo __('Below, all the results found for the search term ') . '"' . $search_query . '".' ?>
+            <?php echo __('Below, all the results found for the search term', 'zenc') . ' "' . $search_query . '".' ?>
         </p>
     <?php elseif (is_category()): ?>
         <h1 class="mb-[.25em]">

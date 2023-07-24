@@ -4,7 +4,7 @@
         <?php _e('Page not found', 'zenc'); ?>
     </h1>
     <p class="text-xl md:text-2xl">
-        <?php _e("The page you're looking for doesn't exist. Maybe it never existed or maybe it was moved to another URL. Please check the typed address or use the search below.", 'zenc'); ?>
+        <?php _e("The page you're looking for doesn't exist. Maybe it never existed or maybe it was moved to another URL. Please, check the typed address or use the search below.", 'zenc'); ?>
     </p>
     <div class="container mt-[2rem]">
         <?php get_search_form(); ?>

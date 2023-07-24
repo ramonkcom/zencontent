@@ -1,0 +1,171 @@
+# Copyright (C) 2023 Ramon K.
+# This file is distributed under the MIT License.
+msgid ""
+msgstr ""
+"Project-Id-Version: Zencontent 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/zencontent\n"
+"POT-Creation-Date: 2023-07-24T14:13:58+00:00\n"
+"PO-Revision-Date: 2023-07-24 11:15-0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: pt_BR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.3.2\n"
+"X-Domain: zenc\n"
+
+#. Theme Name of the theme
+msgid "Zencontent"
+msgstr "Zencontent"
+
+#. Theme URI of the theme
+msgid "https://github.com/ramonkcom/zencontent/"
+msgstr "https://github.com/ramonkcom/zencontent/"
+
+#. Description of the theme
+msgid ""
+"Zencontent is a minimalist single column theme, designed to better serve old-"
+"school bloggers who want to share content in a lightweight and uncluttered "
+"way. It supports dark mode, post formats and Gutenberg blocks. For "
+"developers, Zencontent is also easy to customize and extend, as it was "
+"developed using only Tailwind CSS and Typescript - give it a try!"
+msgstr ""
+"Zencontent é um tema minimalista de coluna única, projetado para melhor "
+"atender blogueiros old-school que queiram compartilhar conteúdo de uma forma "
+"leve e organizada. Ele suporta modo escuro, formatos e blocos do Gutenberg. "
+"Para desenvolvedores, o Zencontent é fácil de customizar e estender, uma vez "
+"que foi desenvolvido utilizando apenas Tailwind CSS e Typescript - "
+"experimente!"
+
+#. Author of the theme
+msgid "Ramon K."
+msgstr "Ramon K."
+
+#. Author URI of the theme
+msgid "https://github.com/ramonkcom/"
+msgstr "https://github.com/ramonkcom/"
+
+#: 404.php:4
+msgid "Page not found"
+msgstr "Página não encontrada"
+
+#: 404.php:7
+msgid ""
+"The page you're looking for doesn't exist. Maybe it never existed or maybe "
+"it was moved to another URL. Please, check the typed address or use the "
+"search below."
+msgstr ""
+"A página que você está procurando não existe. Talvez ela nunca tenha "
+"existido ou talvez tenha sido movida para outra URL. Por favor, verifique o "
+"endereço digitado ou use a busca abaixo."
+
+#: functions.php:23
+msgid "Main Menu"
+msgstr "Menu Principal"
+
+#: functions.php:60
+msgid "Search results for"
+msgstr "Resultados da busca por"
+
+#: functions.php:62
+msgid "Post on category"
+msgstr "Postagens na categoria"
+
+#: functions.php:64
+msgid "Posts tagged"
+msgstr "Postagens com a palavra-chave"
+
+#: functions.php:68
+msgid "Part"
+msgstr "Parte"
+
+#: functions.php:80
+msgid "Read more"
+msgstr "Leia mais"
+
+#: functions.php:120
+msgid "Logo (dark mode)"
+msgstr "Logo (modo escuro)"
+
+#: functions.php:142
+msgid "Show tagline?"
+msgstr "Mostrar tagline?"
+
+#: functions.php:152 functions.php:172
+msgid "This is a zen place for content curation and self expression."
+msgstr "Este é um lugar zen para curadoria de conteúdo e auto-expressão."
+
+#: functions.php:162
+msgid "Long description"
+msgstr "Descrição longa"
+
+#: functions.php:180
+msgid "Footer text"
+msgstr "Texto do rodapé"
+
+#. translators: Hidden accessibility text.
+#: header.php:49
+msgid "Skip to content"
+msgstr "Pular p/ o conteúdo"
+
+#: index.php:18
+msgid "Below, all the results found for the search term"
+msgstr "Abaixo, todos os resultados encontrados para o termo de busca"
+
+#: index.php:66
+msgid "No posts found."
+msgstr "Nenhuma postagem encontrada."
+
+#: page.php:27
+msgid "Page not found."
+msgstr "Página não encontrada."
+
+#: searchform.php:5
+msgid "Search:"
+msgstr "Busca:"
+
+#: searchform.php:9
+msgid "Type your search term..."
+msgstr "Digite o seu termo de pesquisa…"
+
+#: searchform.php:18
+msgid "Search"
+msgstr "Buscar"
+
+#: single.php:19
+msgid "Post not found."
+msgstr "Postagem não encontrada."
+
+#: template-parts/header.php:44
+msgid "Toggle theme"
+msgstr "Alternar tema"
+
+#: template-parts/pagination.php:8
+msgid "← Newer posts"
+msgstr "← Postagens mais recentes"
+
+#: template-parts/pagination.php:19
+msgid "Older posts →"
+msgstr "Postagens mais antigas →"
+
+#: template-parts/pagination.php:33
+msgid "Parts:"
+msgstr "Partes:"
+
+#: template-parts/post/meta-categories.php:8
+msgid "in"
+msgstr "em"
+
+#: template-parts/post/single-standard.php:7
+msgid "part"
+msgstr "parte"
+
+#~ msgid ""
+#~ "Minimalist single column theme for content curation and self expression."
+#~ msgstr ""
+#~ "Tema minimalista de coluna única para curadoria de conteúdo e auto-"
+#~ "expressão."
+
+#~ msgid "This is a place for curation and self expression."
+#~ msgstr "Este é um lugar para curadoria  e auto-expressão."

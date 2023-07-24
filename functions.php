@@ -21,6 +21,8 @@ function zenc_setup()
     add_theme_support('post-formats', $supported_formats);
 
     register_nav_menu('main_menu', __('Main Menu', 'zenc'));
+
+    load_theme_textdomain('zenc', get_template_directory() . '/languages');
 }
 add_action('after_setup_theme', 'zenc_setup');
 
@@ -167,7 +169,7 @@ function zenc_customizer($wp_customize)
         $wp_customize->add_setting(
             'footer_line',
             array(
-                'default' => __('This is a place for curation and self expression.', 'zenc'),
+                'default' => __('This is a zen place for content curation and self expression.', 'zenc'),
                 'sanitize_callback' => 'sanitize_text_field',
             )
         );
