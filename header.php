@@ -40,7 +40,7 @@
     <?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?>>
+<body <?php body_class('flex flex-col min-h-screen'); ?>>
     <?php wp_body_open(); ?>
 
     <a class="skip-link screen-reader-text" href="#content">
@@ -52,4 +52,4 @@
 
     <?php get_template_part('template-parts/header'); ?>
 
-    <main id="content" class="site-content">
+    <main id="content" class="site-content flex-grow">
