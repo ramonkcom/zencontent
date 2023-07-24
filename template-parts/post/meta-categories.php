@@ -1,6 +1,6 @@
 <div class="flex items-center font-mono text-stone-400 dark:text-stone-500 uppercase text-xs">
     <a href="<?php the_permalink() ?>" title="<?php the_title() ?>"
-        class="text-stone-400 dark:text-stone-500 border-none">
+        class="border-none text-stone-400 hover:text-stone-700 dark:text-stone-500 dark:hover:text-stone-300">
         <?php echo get_the_date(); ?>
     </a>
     <?php if ($categories = get_the_category()): ?>
@@ -11,7 +11,7 @@
             <?php foreach ($categories as $category): ?>
                 <li class="p-0 border-none">
                     <a href="<?php echo get_category_link($category->term_id); ?>"
-                        class=" text-stone-400 dark:text-stone-500 font-normal border-none">
+                        class="font-normal border-none text-stone-400 hover:text-stone-700 dark:text-stone-500 dark:hover:text-stone-300">
                         <?php echo $category->name; ?>
                     </a>
                 </li>

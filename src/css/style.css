@@ -177,10 +177,9 @@
   .post.post-abstract h2:not(.specific):not(.specific) {
     @apply md:text-4xl mt-0;
   }
-  .wide {
-    @apply px-4 sm:mx-[3rem];
+  .post.post-abstract h2:not(.specific):not(.specific) a {
+    @apply hover:text-stone-950 dark:hover:text-stone-50;
   }
-
   .post.post-quote main blockquote {
     @apply pl-6 before:content-['“'] before:font-serif before:text-8xl before:absolute before:-ml-12 before:mt-[-0.15em] before:text-stone-400 before:dark:text-stone-600;
   }
@@ -192,5 +191,8 @@
   }
   .post.post-quote.post-single main blockquote p {
     @apply text-2xl md:text-4xl;
+  }
+  .wide {
+    @apply px-4 sm:mx-[3rem];
   }
 }
