@@ -1,5 +1,5 @@
 # Copyright (C) 2023 Ramon K.
-# This file is distributed under the MIT License.
+# This file is distributed under the GNU General Public License.
 msgid ""
 msgstr ""
 "Project-Id-Version: Zencontent 1.0.0\n"
@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2023-07-24T23:04:43+00:00\n"
+"POT-Creation-Date: 2023-07-25T17:01:44+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.8.1\n"
 "X-Domain: zencontent\n"
@@ -42,48 +42,88 @@ msgstr ""
 msgid "The page you're looking for doesn't exist. Maybe it never existed or maybe it was moved to another URL. Please, check the typed address or use the search below."
 msgstr ""
 
-#: functions.php:23
+#: functions.php:28
 msgid "Main Menu"
 msgstr ""
 
-#: functions.php:60
+#: functions.php:33
+msgid "Format"
+msgstr ""
+
+#: functions.php:42
+msgid "Audio"
+msgstr ""
+
+#: functions.php:43
+msgid "Chat"
+msgstr ""
+
+#: functions.php:44
+msgid "Gallery"
+msgstr ""
+
+#: functions.php:45
+msgid "Image"
+msgstr ""
+
+#: functions.php:46
+msgid "Link"
+msgstr ""
+
+#: functions.php:47
+msgid "Quote"
+msgstr ""
+
+#: functions.php:48
+msgid "Status"
+msgstr ""
+
+#: functions.php:49
+msgid "Video"
+msgstr ""
+
+#: functions.php:56
+msgid "Standard"
+msgstr ""
+
+#: functions.php:93
 msgid "Search results for"
 msgstr ""
 
-#: functions.php:62
+#: functions.php:95
 msgid "Post on category"
 msgstr ""
 
-#: functions.php:64
+#: functions.php:97
 msgid "Posts tagged"
 msgstr ""
 
-#: functions.php:68
+#: functions.php:101
 msgid "Part"
 msgstr ""
 
-#: functions.php:80
+#: functions.php:113
 msgid "Read more"
 msgstr ""
 
-#: functions.php:120
+#: functions.php:153
 msgid "Logo (dark mode)"
 msgstr ""
 
-#: functions.php:142
+#: functions.php:175
 msgid "Show tagline?"
 msgstr ""
 
-#: functions.php:152
-#: functions.php:172
+#: functions.php:185
+#: functions.php:205
 msgid "This is a zen place for content curation and self expression."
 msgstr ""
 
-#: functions.php:162
+#: functions.php:195
 msgid "Long description"
 msgstr ""
 
-#: functions.php:180
+#: functions.php:213
 msgid "Footer text"
 msgstr ""
 
@@ -96,7 +136,7 @@ msgstr ""
 msgid "Below, all the results found for the search term"
 msgstr ""
 
-#: index.php:66
+#: index.php:64
 msgid "No posts found."
 msgstr ""
 
@@ -116,23 +156,23 @@ msgstr ""
 msgid "Search"
 msgstr ""
 
-#: single.php:19
+#: single.php:16
 msgid "Post not found."
 msgstr ""
 
-#: template-parts/header.php:44
+#: template-parts/header.php:46
 msgid "Toggle theme"
 msgstr ""
 
-#: template-parts/pagination.php:8
+#: template-parts/pagination.php:14
 msgid "← Newer posts"
 msgstr ""
 
-#: template-parts/pagination.php:19
+#: template-parts/pagination.php:25
 msgid "Older posts →"
 msgstr ""
 
-#: template-parts/pagination.php:33
+#: template-parts/pagination.php:39
 msgid "Parts:"
 msgstr ""
 

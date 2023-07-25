@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Zencontent 1.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/zencontent\n"
-"POT-Creation-Date: 2023-07-24T23:04:43+00:00\n"
-"PO-Revision-Date: 2023-07-24 20:05-0300\n"
+"POT-Creation-Date: 2023-07-25T17:01:44+00:00\n"
+"PO-Revision-Date: 2023-07-25 14:03-0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: pt_BR\n"
@@ -60,47 +60,87 @@ msgstr ""
 "existido ou talvez tenha sido movida para outra URL. Por favor, verifique o "
 "endereço digitado ou use a busca abaixo."
 
-#: functions.php:23
+#: functions.php:28
 msgid "Main Menu"
 msgstr "Menu Principal"
 
-#: functions.php:60
+#: functions.php:33
+msgid "Format"
+msgstr "Formato"
+
+#: functions.php:42
+msgid "Audio"
+msgstr "Áudio"
+
+#: functions.php:43
+msgid "Chat"
+msgstr "Conversa"
+
+#: functions.php:44
+msgid "Gallery"
+msgstr "Galeria"
+
+#: functions.php:45
+msgid "Image"
+msgstr "Imagem"
+
+#: functions.php:46
+msgid "Link"
+msgstr "Link"
+
+#: functions.php:47
+msgid "Quote"
+msgstr "Citação"
+
+#: functions.php:48
+msgid "Status"
+msgstr "Atualização"
+
+#: functions.php:49
+msgid "Video"
+msgstr "Vídeo"
+
+#: functions.php:56
+msgid "Standard"
+msgstr "Padrão"
+
+#: functions.php:93
 msgid "Search results for"
 msgstr "Resultados da busca por"
 
-#: functions.php:62
+#: functions.php:95
 msgid "Post on category"
 msgstr "Postagens na categoria"
 
-#: functions.php:64
+#: functions.php:97
 msgid "Posts tagged"
 msgstr "Postagens com a palavra-chave"
 
-#: functions.php:68
+#: functions.php:101
 msgid "Part"
 msgstr "Parte"
 
-#: functions.php:80
+#: functions.php:113
 msgid "Read more"
 msgstr "Leia mais"
 
-#: functions.php:120
+#: functions.php:153
 msgid "Logo (dark mode)"
 msgstr "Logo (modo escuro)"
 
-#: functions.php:142
+#: functions.php:175
 msgid "Show tagline?"
 msgstr "Mostrar tagline?"
 
-#: functions.php:152 functions.php:172
+#: functions.php:185 functions.php:205
 msgid "This is a zen place for content curation and self expression."
 msgstr "Este é um lugar zen para curadoria de conteúdo e auto-expressão."
 
-#: functions.php:162
+#: functions.php:195
 msgid "Long description"
 msgstr "Descrição longa"
 
-#: functions.php:180
+#: functions.php:213
 msgid "Footer text"
 msgstr "Texto do rodapé"
 
@@ -113,7 +153,7 @@ msgstr "Pular p/ o conteúdo"
 msgid "Below, all the results found for the search term"
 msgstr "Abaixo, todos os resultados encontrados para o termo de busca"
 
-#: index.php:66
+#: index.php:64
 msgid "No posts found."
 msgstr "Nenhuma postagem encontrada."
 
@@ -133,23 +173,23 @@ msgstr "Digite o seu termo de pesquisa…"
 msgid "Search"
 msgstr "Buscar"
 
-#: single.php:19
+#: single.php:16
 msgid "Post not found."
 msgstr "Postagem não encontrada."
 
-#: template-parts/header.php:44
+#: template-parts/header.php:46
 msgid "Toggle theme"
 msgstr "Alternar tema"
 
-#: template-parts/pagination.php:8
+#: template-parts/pagination.php:14
 msgid "← Newer posts"
 msgstr "← Postagens mais recentes"
 
-#: template-parts/pagination.php:19
+#: template-parts/pagination.php:25
 msgid "Older posts →"
 msgstr "Postagens mais antigas →"
 
-#: template-parts/pagination.php:33
+#: template-parts/pagination.php:39
 msgid "Parts:"
 msgstr "Partes:"
 

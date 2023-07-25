@@ -29,6 +29,36 @@ function zenc_setup()
 }
 add_action('after_setup_theme', 'zenc_setup');
 
+function zenc_posts_columns($columns) {
+    $columns['post_format'] = __('Format', 'zencontent');
+    return $columns;
+}
+add_filter('manage_posts_columns', 'zenc_posts_columns');
+
+function zenc_posts_custom_column($column_name, $post_id) {
+    if ($column_name === 'post_format') {
+        $post_format = get_post_format($post_id);
+        $format_strings = array(
+            'audio' => __('Audio', 'zencontent'),
+            'chat' => __('Chat', 'zencontent'),
+            'gallery' => __('Gallery', 'zencontent'),
+            'image' => __('Image', 'zencontent'),
+            'link' => __('Link', 'zencontent'),
+            'quote' => __('Quote', 'zencontent'),
+            'status' => __('Status', 'zencontent'),
+            'video' => __('Video', 'zencontent'),
+        );
+        
+        if ($post_format) {
+            $post_format_url = admin_url('edit.php?post_format=' . $post_format);
+            echo '<a href="' . esc_url($post_format_url) . '">' . $format_strings[$post_format] . '</a>';
+        } else {
+            echo __('Standard', 'zencontent');
+        }
+    }
+}
+add_action('manage_posts_custom_column', 'zenc_posts_custom_column', 10, 2);
+
 function zenc_assets($hook)
 {
     $script_path = '/assets/js/script.js';
