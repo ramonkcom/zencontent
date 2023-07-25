@@ -1,5 +1,5 @@
 <?php get_header() ?>
-<div class="max-w-[58rem] wide mx-auto px-4 py-[6rem] mt-0 text-center">
+<div class="max-w-[58rem] wide mx-auto px-4 py-[6rem] sm:py-[9rem] mt-0 text-center">
     <?php if (is_home()): ?>
         <h1 class="mb-[.25em]">
             <?php bloginfo('description'); ?>
