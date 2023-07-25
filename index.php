@@ -58,11 +58,9 @@
             <?php get_template_part('template-parts/post/abstract', $format); ?>
         </article>
     <?php endwhile; ?>
-    <nav class="max-w-[58rem] mx-auto py-[4rem] px-4 border-t border-dotted border-stone-400 dark:border-stone-500">
-        <?php get_template_part('template-parts/pagination', '', array('context' => 'loop')); ?>
-    </nav>
+    <?php get_template_part('template-parts/pagination', '', array('context' => 'loop')); ?>
 <?php else: ?>
-    <div class="max-w-[58rem] container py-[3rem] border-t border-dotted border-stone-400 dark:border-stone-500">
+    <div class="max-w-[58rem] mx-auto container py-[3rem] border-t border-dotted border-stone-400 dark:border-stone-500">
         <p><?php _e('No posts found.', 'zencontent'); ?></p>
     </div>
 <?php endif; ?>

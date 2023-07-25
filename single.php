@@ -9,10 +9,7 @@
         <article id="post-<?php the_ID(); ?>" <?php post_class('py-[6rem] mx-auto max-w-[58rem] post-single ' . $format_classes); ?>>
             <?php get_template_part('template-parts/post/single', $format); ?>
         </article>
-
-        <nav class="max-w-[58rem] py-[3rem] px-4 mx-auto border-t border-stone-400 dark:border-stone-600">
-            <?php get_template_part('template-parts/pagination', '', array('context' => 'single')); ?>
-        </nav>
+        <?php get_template_part('template-parts/pagination', '', array('context' => 'single')); ?>
     <?php endwhile; ?>
 <?php else: ?>
     <div class="max-w-[58rem] py-[4em] mx-auto">
