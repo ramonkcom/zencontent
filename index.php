@@ -52,7 +52,7 @@
             <div class="border-t border-dotted border-stone-400 dark:border-stone-500 mb-[2.5rem]">
                 <span
                     class="inline-block -mt-[1px] md:-ml-[3px] md:opacity-75 dark:opacity-100 transition-all duration-200 p-[1rem] rounded rouded-full border border-dotted border-stone-400 text-stone-400 dark:border-stone-500 dark:text-stone-500">
-                    <?php echo zenc_get_format_icon($format, '1.5rem'); ?>
+                    <?php echo zencontent_get_format_icon($format, '1.5rem'); ?>
                 </span>
             </div>
             <?php get_template_part('template-parts/post/abstract', $format); ?>

@@ -1,6 +1,6 @@
 <?php
 
-function zenc_setup()
+function zencontent_setup()
 {
     add_theme_support('title-tag');
 
@@ -27,15 +27,15 @@ function zenc_setup()
 
     register_nav_menu('main_menu', __('Main Menu', 'zencontent'));
 }
-add_action('after_setup_theme', 'zenc_setup');
+add_action('after_setup_theme', 'zencontent_setup');
 
-function zenc_posts_columns($columns) {
+function zencontent_posts_columns($columns) {
     $columns['post_format'] = __('Format', 'zencontent');
     return $columns;
 }
-add_filter('manage_posts_columns', 'zenc_posts_columns');
+add_filter('manage_posts_columns', 'zencontent_posts_columns');
 
-function zenc_posts_custom_column($column_name, $post_id) {
+function zencontent_posts_custom_column($column_name, $post_id) {
     if ($column_name === 'post_format') {
         $post_format = get_post_format($post_id);
         $format_strings = array(
@@ -57,9 +57,9 @@ function zenc_posts_custom_column($column_name, $post_id) {
         }
     }
 }
-add_action('manage_posts_custom_column', 'zenc_posts_custom_column', 10, 2);
+add_action('manage_posts_custom_column', 'zencontent_posts_custom_column', 10, 2);
 
-function zenc_assets($hook)
+function zencontent_assets($hook)
 {
     $script_path = '/assets/js/script.js';
     $script_ver = date("ymd-Gis", filemtime(get_template_directory() . $script_path));
@@ -72,9 +72,9 @@ function zenc_assets($hook)
     $style_ver = date("ymd-Gis", filemtime(get_template_directory() . $style_path));
     wp_enqueue_style('zencontent-main-css', get_template_directory_uri() . $style_path, array('google-fonts'), $style_ver);
 }
-add_action('wp_enqueue_scripts', 'zenc_assets');
+add_action('wp_enqueue_scripts', 'zencontent_assets');
 
-function zenc_script_tag($tag, $handle, $src)
+function zencontent_script_tag($tag, $handle, $src)
 {
     if (!str_contains($handle, 'zencontent') || str_contains($handle, 'nodefer')) {
         return $tag;
@@ -83,9 +83,9 @@ function zenc_script_tag($tag, $handle, $src)
     $tag = '<script src="' . esc_url($src) . '" defer></script>';
     return $tag;
 }
-add_filter('script_loader_tag', 'zenc_script_tag', 10, 3);
+add_filter('script_loader_tag', 'zencontent_script_tag', 10, 3);
 
-function zenc_document_title($title)
+function zencontent_document_title($title)
 {
     if (is_home() || is_front_page()) {
         return get_bloginfo('name') . ' | ' . get_bloginfo('description');
@@ -106,15 +106,15 @@ function zenc_document_title($title)
     }
     return $title;
 }
-add_filter('pre_get_document_title', 'zenc_document_title');
+add_filter('pre_get_document_title', 'zencontent_document_title');
 
-function zenc_read_more_link()
+function zencontent_read_more_link()
 {
     return '<p><a href="' . get_permalink() . '" title="' . get_the_title() . '" class="italic">(' . __('Read more', 'zencontent') . ' ...)</a></p>';
 }
-add_filter('the_content_more_link', 'zenc_read_more_link');
+add_filter('the_content_more_link', 'zencontent_read_more_link');
 
-function zenc_customizer($wp_customize)
+function zencontent_customizer($wp_customize)
 {
     class WP_Customize_Textarea_Control extends WP_Customize_Control
     {
@@ -218,9 +218,9 @@ function zenc_customizer($wp_customize)
         );
     }
 }
-add_action('customize_register', 'zenc_customizer');
+add_action('customize_register', 'zencontent_customizer');
 
-function zenc_get_format_icon($format, $size = 16, $wrapper_class = '')
+function zencontent_get_format_icon($format, $size = 16, $wrapper_class = '')
 {
     $icons = array(
         'audio' => (
