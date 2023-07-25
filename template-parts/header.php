@@ -30,14 +30,16 @@
 
     <div class="flex items-center">
         <?php
-        wp_nav_menu(
-            array(
-                'container' => 'nav',
-                'container_class' => 'main-menu hidden md:block flex',
-                'menu_class' => 'font-sans font-bold md:flex md:justify-between md:space-x-4 leading-relaxed',
-                'theme_location' => 'main_menu'
-            )
-        );
+        if (has_nav_menu('main_menu')) {
+            wp_nav_menu(
+                array(
+                    'container' => 'nav',
+                    'container_class' => 'main-menu hidden md:block flex',
+                    'menu_class' => 'font-sans font-bold md:flex md:justify-between md:space-x-4 leading-relaxed',
+                    'theme_location' => 'main_menu'
+                )
+            );
+        }
         ?>
         <button
             class="js-theme-switcher btn p-[.625rem] mr-2 md:mr-0 md:ml-4 md:text-stone-500 md:hover:text-stone-800 md:dark:text-stone-400 md:dark:hover:text-stone-100"
@@ -79,11 +81,13 @@
 <nav
     class="js-menu hidden px-4 font-bold text-right fixed z-10 top-[3.5rem] left-0 w-full h-full transition-opacity opacity-0 duration-200 text-3xl leading-relaxed bg-stone-300/90 dark:bg-stone-700/90  py-[1rem] md:hidden">
     <?php
-    wp_nav_menu(
-        array(
-            'menu_class' => 'font-sans w-full',
-            'theme_location' => 'main_menu'
-        )
-    );
+    if (has_nav_menu('main_menu')) {
+        wp_nav_menu(
+            array(
+                'menu_class' => 'font-sans w-full',
+                'theme_location' => 'main_menu'
+            )
+        );
+    }
     ?>
 </nav>
