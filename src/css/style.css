@@ -84,6 +84,20 @@
   dt {
     @apply font-normal;
   }
+  form input:not([type="submit"]),
+  form select,
+  form textarea {
+    @apply font-sans text-sm font-normal rounded-none rounded-t md:rounded-l md:rounded-r-none py-2 px-2 shadow-inner border border-stone-400  dark:border-stone-500 bg-stone-200 dark:bg-stone-600 text-stone-700 dark:text-stone-300;
+  }
+  form button,
+  form button.wp-block-button__link,
+  form input[type="search"],
+  form input[type="submit"] {
+    @apply btn;
+  }
+  form label {
+    @apply font-bold font-sans text-sm;
+  }
   h1:not(.specific),
   h2:not(.specific),
   h3:not(.specific),
@@ -117,6 +131,9 @@
   }
   h6:not(.specific) {
     @apply text-base;
+  }
+  input[type="search"] {
+    -webkit-appearance: none;
   }
   pre {
     @apply overflow-x-auto font-mono font-normal bg-stone-950 text-stone-50 rounded p-4;

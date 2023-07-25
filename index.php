@@ -1,5 +1,5 @@
 <?php get_header() ?>
-<div class="max-w-[58rem] wide mx-auto px-4 py-[6rem] mt-0 text-center">
+<div class="max-w-[58rem] wide mx-auto px-4 py-[6rem] sm:py-[9rem] mt-0 text-center">
     <?php if (is_home()): ?>
         <h1 class="mb-[.25em]">
             <?php bloginfo('description'); ?>
@@ -15,7 +15,7 @@
             <?php echo '"' . $search_query . '"'; ?>
         </h1>
         <p class="text-xl md:text-2xl">
-            <?php echo __('Below, all the results found for the search term', 'zenc') . ' "' . $search_query . '".' ?>
+            <?php echo __('Below, all the results found for the search term', 'zencontent') . ' "' . $search_query . '".' ?>
         </p>
     <?php elseif (is_category()): ?>
         <h1 class="mb-[.25em]">
@@ -52,18 +52,16 @@
             <div class="border-t border-dotted border-stone-400 dark:border-stone-500 mb-[2.5rem]">
                 <span
                     class="inline-block -mt-[1px] md:-ml-[3px] md:opacity-75 dark:opacity-100 transition-all duration-200 p-[1rem] rounded rouded-full border border-dotted border-stone-400 text-stone-400 dark:border-stone-500 dark:text-stone-500">
-                    <?php echo zenc_get_format_icon($format, '1.5rem'); ?>
+                    <?php echo zencontent_get_format_icon($format, '1.5rem'); ?>
                 </span>
             </div>
             <?php get_template_part('template-parts/post/abstract', $format); ?>
         </article>
     <?php endwhile; ?>
-    <nav class="max-w-[58rem] mx-auto py-[4rem] px-4 border-t border-dotted border-stone-400 dark:border-stone-500">
-        <?php get_template_part('template-parts/pagination', '', array('context' => 'loop')); ?>
-    </nav>
+    <?php get_template_part('template-parts/pagination', '', array('context' => 'loop')); ?>
 <?php else: ?>
-    <div class="max-w-[58rem] container py-[3rem] border-t border-dotted border-stone-400 dark:border-stone-500">
-        <p><?php _e('No posts found.', 'zenc'); ?></p>
+    <div class="max-w-[58rem] mx-auto container py-[3rem] border-t border-dotted border-stone-400 dark:border-stone-500">
+        <p><?php _e('No posts found.', 'zencontent'); ?></p>
     </div>
 <?php endif; ?>
 <?php get_footer() ?>

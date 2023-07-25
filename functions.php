@@ -1,32 +1,65 @@
 <?php
 
-function zenc_setup()
+function zencontent_setup()
 {
     add_theme_support('title-tag');
 
-    add_theme_support('responsive-embeds');
+    add_theme_support( 'automatic-feed-links');
+
+    load_theme_textdomain('zencontent', get_template_directory() . '/languages');
+
+    add_theme_support('post-thumbnails');
 
     add_theme_support(
         'custom-logo',
         array(
-            'height' => 30,
-            'flex-height' => true,
-            'flex-width' => true,
+        'height' => 30,
+        'flex-height' => true,
+        'flex-width' => true,
         )
     );
-
-    add_theme_support('post-thumbnails');
+    
+    
+    add_theme_support('responsive-embeds');
 
     $supported_formats = array('audio', 'chat', 'gallery', 'image', 'link', 'quote', 'status', 'video');
     add_theme_support('post-formats', $supported_formats);
 
-    register_nav_menu('main_menu', __('Main Menu', 'zenc'));
-
-    load_theme_textdomain('zenc', get_template_directory() . '/languages');
+    register_nav_menu('main_menu', __('Main Menu', 'zencontent'));
 }
-add_action('after_setup_theme', 'zenc_setup');
+add_action('after_setup_theme', 'zencontent_setup');
 
-function zenc_assets($hook)
+function zencontent_posts_columns($columns) {
+    $columns['post_format'] = __('Format', 'zencontent');
+    return $columns;
+}
+add_filter('manage_posts_columns', 'zencontent_posts_columns');
+
+function zencontent_posts_custom_column($column_name, $post_id) {
+    if ($column_name === 'post_format') {
+        $post_format = get_post_format($post_id);
+        $format_strings = array(
+            'audio' => __('Audio', 'zencontent'),
+            'chat' => __('Chat', 'zencontent'),
+            'gallery' => __('Gallery', 'zencontent'),
+            'image' => __('Image', 'zencontent'),
+            'link' => __('Link', 'zencontent'),
+            'quote' => __('Quote', 'zencontent'),
+            'status' => __('Status', 'zencontent'),
+            'video' => __('Video', 'zencontent'),
+        );
+        
+        if ($post_format) {
+            $post_format_url = admin_url('edit.php?post_format=' . $post_format);
+            echo '<a href="' . esc_url($post_format_url) . '">' . $format_strings[$post_format] . '</a>';
+        } else {
+            echo __('Standard', 'zencontent');
+        }
+    }
+}
+add_action('manage_posts_custom_column', 'zencontent_posts_custom_column', 10, 2);
+
+function zencontent_assets($hook)
 {
     $script_path = '/assets/js/script.js';
     $script_ver = date("ymd-Gis", filemtime(get_template_directory() . $script_path));
@@ -39,33 +72,33 @@ function zenc_assets($hook)
     $style_ver = date("ymd-Gis", filemtime(get_template_directory() . $style_path));
     wp_enqueue_style('zencontent-main-css', get_template_directory_uri() . $style_path, array('google-fonts'), $style_ver);
 }
-add_action('wp_enqueue_scripts', 'zenc_assets');
+add_action('wp_enqueue_scripts', 'zencontent_assets');
 
-function zenc_script_tag($tag, $handle, $src)
+function zencontent_script_tag($tag, $handle, $src)
 {
-    if (!str_contains($handle, 'zenc') || str_contains($handle, 'nodefer')) {
+    if (!str_contains($handle, 'zencontent') || str_contains($handle, 'nodefer')) {
         return $tag;
     }
 
     $tag = '<script src="' . esc_url($src) . '" defer></script>';
     return $tag;
 }
-add_filter('script_loader_tag', 'zenc_script_tag', 10, 3);
+add_filter('script_loader_tag', 'zencontent_script_tag', 10, 3);
 
-function zenc_document_title($title)
+function zencontent_document_title($title)
 {
     if (is_home() || is_front_page()) {
         return get_bloginfo('name') . ' | ' . get_bloginfo('description');
     } elseif (is_search()) {
-        $title = __('Search results for', 'zenc') . ' "' . get_search_query() . '"';
+        $title = __('Search results for', 'zencontent') . ' "' . get_search_query() . '"';
     } elseif (is_category()) {
-        $title = __('Post on category', 'zenc') . ' "' . single_cat_title('', false) . '"';
+        $title = __('Post on category', 'zencontent') . ' "' . single_cat_title('', false) . '"';
     } elseif (is_tag()) {
-        $title = __('Posts tagged', 'zenc') . ' "' . single_tag_title('', false) . '"';
+        $title = __('Posts tagged', 'zencontent') . ' "' . single_tag_title('', false) . '"';
     } elseif (is_singular('post')) {
         $title = get_the_title();
         if (get_query_var('page')) {
-            $title .= ' - ' . __('Part', 'zenc') . ' ' . get_query_var('page');
+            $title .= ' - ' . __('Part', 'zencontent') . ' ' . get_query_var('page');
         }
     }
     if ($title) {
@@ -73,15 +106,15 @@ function zenc_document_title($title)
     }
     return $title;
 }
-add_filter('pre_get_document_title', 'zenc_document_title');
+add_filter('pre_get_document_title', 'zencontent_document_title');
 
-function zenc_read_more_link()
+function zencontent_read_more_link()
 {
-    return '<p><a href="' . get_permalink() . '" title="' . get_the_title() . '" class="italic">(' . __('Read more', 'zenc') . ' ...)</a></p>';
+    return '<p><a href="' . get_permalink() . '" title="' . get_the_title() . '" class="italic">(' . __('Read more', 'zencontent') . ' ...)</a></p>';
 }
-add_filter('the_content_more_link', 'zenc_read_more_link');
+add_filter('the_content_more_link', 'zencontent_read_more_link');
 
-function zenc_customizer($wp_customize)
+function zencontent_customizer($wp_customize)
 {
     class WP_Customize_Textarea_Control extends WP_Customize_Control
     {
@@ -117,7 +150,7 @@ function zenc_customizer($wp_customize)
                 $wp_customize,
                 'dark_mode_logo',
                 array(
-                    'label' => __('Logo (dark mode)', 'zenc'),
+                    'label' => __('Logo (dark mode)', 'zencontent'),
                     'section' => 'title_tagline',
                     'settings' => 'dark_mode_logo',
                     'priority' => 8,
@@ -139,7 +172,7 @@ function zenc_customizer($wp_customize)
         $wp_customize->add_control(
             'show_tagline',
             array(
-                'label' => __('Show tagline?', 'zenc'),
+                'label' => __('Show tagline?', 'zencontent'),
                 'section' => 'title_tagline',
                 'type' => 'checkbox',
                 'priority' => 10,
@@ -149,7 +182,7 @@ function zenc_customizer($wp_customize)
         $wp_customize->add_setting(
             'blog_long_description',
             array(
-                'default' => __('This is a zen place for content curation and self expression.', 'zenc'),
+                'default' => __('This is a zen place for content curation and self expression.', 'zencontent'),
                 'sanitize_callback' => 'wp_kses_post',
             )
         );
@@ -159,7 +192,7 @@ function zenc_customizer($wp_customize)
                 $wp_customize,
                 'blog_long_description',
                 array(
-                    'label' => __('Long description', 'zenc'),
+                    'label' => __('Long description', 'zencontent'),
                     'section' => 'title_tagline',
                     'settings' => 'blog_long_description',
                 )
@@ -169,7 +202,7 @@ function zenc_customizer($wp_customize)
         $wp_customize->add_setting(
             'footer_line',
             array(
-                'default' => __('This is a zen place for content curation and self expression.', 'zenc'),
+                'default' => __('This is a zen place for content curation and self expression.', 'zencontent'),
                 'sanitize_callback' => 'sanitize_text_field',
             )
         );
@@ -177,7 +210,7 @@ function zenc_customizer($wp_customize)
         $wp_customize->add_control(
             'footer_line',
             array(
-                'label' => __('Footer text', 'zenc'),
+                'label' => __('Footer text', 'zencontent'),
                 'section' => 'title_tagline',
                 'type' => 'text',
                 'priority' => 15,
@@ -185,9 +218,9 @@ function zenc_customizer($wp_customize)
         );
     }
 }
-add_action('customize_register', 'zenc_customizer');
+add_action('customize_register', 'zencontent_customizer');
 
-function zenc_get_format_icon($format, $size = 16, $wrapper_class = '')
+function zencontent_get_format_icon($format, $size = 16, $wrapper_class = '')
 {
     $icons = array(
         'audio' => (
