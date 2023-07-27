@@ -189,7 +189,7 @@
     @apply border-stone-300 text-stone-800 dark:border-stone-500 dark:text-stone-100;
   }
   .narrow {
-    @apply px-4 mx-[2rem] sm:mx-[6rem];
+    @apply px-4 mx-8 sm:mx-40;
   }
   .post.post-abstract h2:not(.specific):not(.specific) {
     @apply md:text-4xl mt-0;
