@@ -114,6 +114,12 @@ function zencontent_read_more_link()
 }
 add_filter('the_content_more_link', 'zencontent_read_more_link');
 
+function zencontent_the_content($content)
+{
+    return str_replace( '<span id="more-' . get_the_ID() . '"></span>', '', $content );
+}
+add_filter('the_content', 'zencontent_the_content');
+
 function zencontent_customizer($wp_customize)
 {
     class WP_Customize_Textarea_Control extends WP_Customize_Control
